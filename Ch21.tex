@@ -1,0 +1,241 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+
+\section{The Cellular Automaton}\label{ch21}
+
+The fundamental notion of a cellular automaton was briefly introduced in Part I, Sect. 5.1. We here resume the discussion of constructing a quantum Hamiltonian for these classical systems, with the intention to arrive at some expression that may be compared with the Hamiltonian of a quantum field theory [110], resembling Eq. (20.6), with Hamiltonian density (20.7), and/or (20.14). In this chapter, we show that one can come very close, although, not surprisingly, we do hit upon difficulties that have not been completely resolved.
+
+
+\subsection{Local Time Reversibility by Switching from Even to Odd Sites and Back}\label{ch21.1}
+
+Time reversibility is important for allowing us to perform simple mathematical manipulations. Without time reversibility, one would not be allowed to identify single states of an automaton with basis elements of a Hilbert space. Now this does not invalidate our ideas if time reversibility is not manifest; in that case one has to identify basis states in Hilbert space with information equivalence classes, as was explained in Sect. 7. The author does suspect that this more complicated situation might well be inevitable in our ultimate theories of the world, but we have to investigate the simpler models first. They are time reversible. Fortunately, there are rich classes of time reversible models that allow us to sharpen our analytical tools, before making our lives more complicated. Useful models are obtained from systems where the evolution law $U$ consists of two parts: $U_A$ prescribes how to update all even lattice sites, and $U_B$ gives the updates of the odd lattice sites. So we have $U = U_A \cdot U_B$.
+
+
+\subsubsection{The Time Reversible Cellular Automaton}\label{ch21.1.1}
+
+In Sect. 5.1, a very simple rule was introduced. The way it was phrased there, the data on two consecutive time layers were required to define the time evolution in the future direction as well as back towards the past-these automata are time reversible. Since, quite generally, most of our models work with single time layers that evolve towards the future or the past, we shrink the time variable by a factor 2. Then, one complete time step for this automaton consists of two procedures: one that updates all even sites only, in a simple, reversible manner, leaving the odd sites unchanged, while the procedure does depend on the data on the odd sites, and one that updates only the odd sites, while depending on the data at the even sites. 
+
+The first of these operators is called $U_{A} .$ It is the operator product of all operations $U_{A}(\vec{x}),$ where $\vec{x}$ are all even sites, and we take all these operations to commute:
+$$
+U_{A}=\prod_{\bar{x} \text { even }} U_{A}(\bar{x}) ; \quad\left[U_{A}(\bar{x}), U_{A}\left(\bar{x}^{\prime}\right)\right]=0, \quad \forall \bar{x}, \bar{x}^{\prime}
+$$
+The commutation is assured if $U_{A}(\vec{x})$ depends only on its neighbours, which are odd, but not on the next-to-nearest neighbours, which are even again. Similarly, we have the operation at the odd sites:
+$$
+U_{B}=\prod_{\vec{y} \text { odd }} U_{B}(\vec{y}) ; \quad\left[U_{B}(\vec{y}), U_{B}\left(\vec{y}^{\prime}\right)\right]=0, \quad \forall \vec{y}, \vec{y}^{\prime}
+$$
+while $\left[U_{A}(\vec{x}), U_{B}(\vec{y})\right] \neq 0$ only if $\vec{x}$ and $\vec{y}$ are direct neighbours. In general, $U_{A}(\vec{x})$ and $U_{B}(\vec{y})$ at any single site are sufficiently simple (often they are finite-dimensional, orthogonal matrices) that they are easy to write as exponentials:
+$$
+\begin{aligned}
+U_{A}(\vec{x}) &=e^{-i A(\vec{x})}, \quad\left[A(\vec{x}), A\left(\vec{x}^{\prime}\right)\right]=0 \\
+U_{B}(\vec{y}) &=e^{-i B(\vec{y})}, \quad\left[B(\vec{y}), B\left(\vec{y}^{\prime}\right)\right]=0
+\end{aligned}
+$$
+$A(\vec{x})$ and $B(\vec{y})$ are defined to lie in the domain $[0,2 \pi),$ or sometimes in the domain $(-\pi, \pi]$
+
+The advantage of this notation is that we can now write
+$$
+U_{A}=e^{-i A}, \quad A=\sum_{\vec{x} \text { even }} A(\vec{x}) ; \quad U_{B}=e^{-i B}, \quad B=\sum_{\vec{y} \text { odd }} B(\vec{y})
+$$
+and the complete evolution operator for one time step $\delta t=1$ can be written as
+$$
+U(\delta t)=e^{-i H}=e^{-i A} e^{-i B}
+$$
+Let the data in a cell $\vec{x}$ be called $Q(\vec{x})$. In the case that the operation $U_{A}(\vec{x})$ consists of a simple addition (either a plane addition or an addition modulo some integer $N$ ) by a quantity $\delta Q\left(Q\left(\vec{y}_{i}\right)\right),$ where $\vec{y}_{i}$ are the direct neighbours of $\vec{x}$, then it is easy to write down explicitly the operators $A(\vec{x})$ and $B(\vec{y})$. Just introduce the translation operator
+$$
+\left.U_{\eta}(\vec{x})=e^{i \eta(\vec{x})}, \quad U_{\eta}|Q(\vec{x})\rangle \equiv | Q(\vec{x})-1 \text { modulo } N\right\rangle
+$$
+
+to find
+$$
+\begin{aligned}
+U_{A}(\vec{x}) &=e^{-i \eta(\vec{x}) \delta Q\left(Q\left(\vec{y}_{i}\right)\right)} \\
+A(\vec{x}) &=\eta(\vec{x}) \delta Q\left(Q\left(\vec{y}_{i}\right)\right) ; \quad B(\vec{y})=\eta(\vec{y}) \delta Q\left(Q\left(\vec{x}_{i}\right)\right)
+\end{aligned}
+$$
+The operator $\eta(\vec{x})$ is not hard to analyse. Assume that we are in a field of additions modulo $N,$ as in Eq. $(21.6) .$ Go the basis of states $|k\rangle_U,$ with $k=$
+$0,1, \ldots, N-1,$ where the subscript $v$ indicates that they are eigenstates of $U_{\eta}$ and
+$\eta(\text { at the point } \vec{x}):$
+$$
+\langle Q | k\rangle_U \equiv \frac{1}{\sqrt{N}} e^{2 \pi i k Q / N}
+$$
+We have
+$$
+\left\langle Q\left|U_{\eta}\right| k\right\rangle_U=\langle Q+1 | k\rangle_U=e^{2 \pi i k / N}\langle Q | k\rangle_U ; \quad U_{\eta}|k\rangle= e^{2 \pi i k / N}|k\rangle_U
+$$
+(if $\left.-\frac{1}{2} N<k \leq \frac{1}{2} N\right),$ so we can define $\eta$ by
+$$
+\begin{aligned}
+\eta|k\rangle_U &=\frac{2 \pi}{N} k|k\rangle_U \\
+\left\langle Q_{1}|\eta| Q_{2}\right\rangle &=\sum_{k}\left\langle Q_{1} | k\right\rangle_U\left(\frac{2 \pi}{N} k\right)_U\left\langle k | Q_{2}\right\rangle
+\end{aligned}
+$$
+( 21.10)
+$$
+=\frac{2 \pi}{N^{2}} \sum_{|k|<\frac{1}{2} N} k e^{2 \pi i k\left(Q_{1}-Q_{2}\right) / N}=\frac{4 \pi i}{N^{2}} \sum_{k=1}^{\frac{1}{2} N} k \sin \left(2 \pi k\left(Q_{1}-Q_{2}\right) / N\right)
+$$
+mathematical manipulations that must look familiar now, see Eqs. ( $2.25 \text { ) and ( } 2.26)$
+in Sect. 2.2 .1 Now $\delta Q\left(\vec{y}_{i}\right)$ does not commute with $\eta\left(\vec{y}_{i}\right),$ and in Eq. ( 21.7) our model assumes the sites $\vec{y}_{i}$ to be only direct neighbours of $\vec{x}$ and $\vec{x}_{i}$ are only the direct neighbours
+of $\vec{y} .$ Therefore, all $A(\vec{x})$ also commute with $B(\vec{y})$ unless $|\vec{x}-\vec{y}|=1 .$ This simplifies
+our discussion of the Hamiltonian $H$ in Eq. ( 21.5)
+
+
+
+
+\subsubsection{The Discrete Classical Hamiltonian Model}\label{ch21.1.2}
+
+In Sect. 19.4.4, we have seen how to generate a local discrete evolution law from a classical, discrete Hamiltonian formalism. Starting from a discrete, non negative Hamiltonian function $H$, typically taking values $N = 0, 1, 2,\ldots$, one searches for an evolution law that keeps this number invariant. This classical $H$ may well be defined as a sum of local terms, so that we have a non negative discrete Hamiltonian density. It was decided that a local evolution law $U(\vec x)$ with the desired properties can be defined, after which one only has to decide in which order this local operation has to be applied to define a unique theory. In order to avoid spurious non-local behaviour, the following rule was proposed:
+
+The evolution equations (e.o.m.) of the entire system over one time step $\delta t$, are obtained by ordering the coordinates as follows: first update all even lattice sites, then update all odd lattice sites (how exactly to choose the order within a given site is immaterial for our discussion). The advantage of this rule is that the $U(\vec x)$ over all even sites $\vec x$ can be chosen all to commute, and the operators on all odd sites $\vec y$ will also all commute with one another; the only non-commutativity then occurs between an evolution operator $U(\vec x)$ at an even site, and the operator $U(\vec y)$ at an adjacent site $\vec y$.
+
+Thus, this model ends up with exactly the same fundamental properties as the time reversible automaton introduced in Sect. 21.1.1: we have UA as defined in Eq. (21.1) and UB as in (21.2), followed by Eqs. (21.3)–(21.5).
+We conclude that, for model building, splitting a space–time lattice into the even and the odd sub lattices is a trick with wide applications. It does not mean that we should believe that the real world is also organized in a lattice system, where such a fundamental role is to be attributed to the even and odd sub lattices; it is merely
+a convenient tool for model building. We shall now discuss why this splitting does seem to lead us very close to a quantum field theory.
+
+
+\subsection{The Baker Campbell Hausdorff Expansion}\label{ch21.2}
+
+The two models of the previous two subsections, the arbitrary cellular automaton and the discrete Hamiltonian model, are very closely related. They are both described by an evolution operator that consists of two steps, $U_{A}$ and $U_{B},$ or, $U_{\text {even }}$ and $U_{\text {odd }}$. The same general principles apply. We define $A, A(\vec{x}), B$ and $B(\vec{x})$ as in Eq. ( 21.4)
+
+To compute the Hamiltonian $H,$ we may consider using the Baker Campbell Hausdorff expansion [ 71]:
+$$
+\begin{array}{l}
+{e^{P} e^{Q}=e^{R}} \\
+R = P+Q+\frac{1}{2}[P,Q] + \frac{1}{12}\left[P, [P,Q]\right]+\\
+{\quad+\frac{1}{12}[[P, Q], Q]+\frac{1}{24}[P,[P, Q]]} +...
+\end{array}
+$$
+a series that continues exclusively with commutators. Replacing $P$ by $-i A, Q$ by
+$-i B$ and $R$ by $-i H,$ we find a series for $H$ in the form of an infinite sequence of commutators. We noted at the end of the previous subsection that the commutators between the local operators $A(\vec{x})$ and $B\left(\vec{x}^{\prime}\right)$ are non-vanishing only if $\vec{x}$ and $\vec{x}^{\prime}$ are neighbours, $\left|\vec{x}-\vec{x}^{\prime}\right|=1 .$ Therefore, if we insert the sums ( 21.4) into Eq. ( 21.11) we obtain again a sum. Writing
+$$
+\begin{aligned}
+K(\vec{r})=A(\vec{r}) & \text { if } \vec{r} \text { is even, and } B(\vec{r}) \text { if } \vec{r} \text { is odd } \\
+L(\vec{r})=A(\vec{r}) & \text { if } \vec{r} \text { is even, } \quad \text { and } \quad-B(\vec{r}) \quad \text { if } \vec{r} \text { is odd }
+\end{aligned}
+$$
+so that
+$$
+A(\vec{r})=\frac{1}{2}(K(\vec{r})+L(\vec{r})) \quad \text { and } \quad B(\vec{r})=\frac{1}{2}(K(\vec{r})-L(\vec{r}))
+$$
+
+we find
+$$
+\begin{aligned}
+H &=\sum_{\vec{r}} \mathcal{H}(\vec{r}) \\
+\mathcal{H}(\vec{r}) &=\mathcal{H}_{1}(\vec{r})+\mathcal{H}_{2}(\vec{r})+\mathcal{H}_{3}(\vec{r})+\cdots
+\end{aligned}
+$$
+where
+$$
+\begin{array}{l}
+{\mathcal{H}_{1}(\vec{r})=K(\vec{r})} \\
+{\mathcal{H}_{2}(\vec{r})=\frac{1}{4} i \sum_{\vec{s}}[K(\vec{r}), L(\vec{s})]} \\
+{\mathcal{H}_{3}(\vec{r})=\frac{1}{24} \sum_{\vec{s}_{1}, \vec{s}_{2}}\left[L(\vec{r}),\left[K\left(\vec{s}_{1}\right), L\left(\vec{s}_{2}\right)\right]\right], \quad \text { etc. }}
+\end{array}
+$$
+The sums here are only over close neighbours, so that each term here can be regarded as a local Hamiltonian density term.
+
+Note however, that as we proceed to collect higher terms of the expansion, more and more distant sites will eventually contribute; $\mathcal{H}_{n}(\vec{r})$ will receive contributions from sites at distance $n-1$ from the original point $\vec{r}$
+
+Note furthermore that the expansion ( 21.14) is infinite, and convergence is not guaranteed; in fact, one may suspect it not to be valid at all, as soon as energies larger than the inverse of the time unit $\delta t$ come into play. We will have to discuss that problem. But first an important observation that improves the expansion.
+
+
+\subsection{Conjugacy Classes}\label{ch21.3}
+
+One might wonder what happens if we change the order of the even and the odd sites. We would get
+$$
+U(\delta t)=e^{-i H} \stackrel{?}{=} e^{-i B} e^{-i A}
+$$
+instead of Eq. $(21.5) .$ Of course this expression could have been used just as well. In fact, it results from a very simple basis transformation: we went from the states $|\psi\rangle$ to the states $U_{B}|\psi\rangle .$ As we stated repeatedly, we note that such basis transformations do not affect the physics.
+
+This implies that we do not need to know exactly the operator $U(\delta t)$ as defined in Eqs. ( 21.5) or $(21.16),$ we need just any element of its conjugacy class. The conjugacy class is defined by the set of operators of the form
+$$
+G U(\delta t) G^{-1}
+$$
+where $G$ can be any unitary operator. Writing $G=e^{F},$ where $F$ is anti-Hermitian, we replace Eq. ( 21.11) by
+$$
+e^{\tilde{R}}=e^{F} e^{P} e^{Q} e^{-F}
+$$
+
+so that
+$$
+\tilde{R}=R+[F, R]+\frac{1}{2}[F,[F, R]]+\frac{1}{3 !}[F,[F,[F, R]]+\cdots
+$$
+We can now decide to choose $F$ in such a way that the resulting expression becomes as simple as possible. For one, interchanging $P$ and $Q$ should not matter. Secondly, replacing $P$ and $Q$ by $-P$ and $-Q$ should give $-\tilde{R},$ because then we are looking at the inverse of Eq. ( 21.19) The calculations simplify if we write
+$$
+S=\frac{1}{2}(P+Q), \quad D=\frac{1}{2}(P-Q) ; \quad P=S+D, \quad Q=S-D \quad(21.20)
+$$
+(or, in the previous section, $S=-\frac{1}{2} i K, \quad D=-\frac{1}{2} i L$ ). With
+$$
+e^{\tilde{R}}=e^{F} e^{S+D} e^{S-D} e^{-F}
+$$
+we can now demand $F$ to be such that:
+$$
+\tilde{R}(S, D)=\tilde{R}(S,-D)=-\tilde{R}(-S,-D)
+$$
+which means that $\tilde{R}$ contains only even powers of $D$ and odd powers of $S .$ We can furthermore demand that $\tilde{R}$ only contains terms that are commutators of $D$ with something; contributions that are commutators of $S$ with something can be removed iteratively by judicious choices of $F$
+
+Using these constraints, one finds a function $F(S, D)$ and $\tilde{R}(S, D) .$ First let us introduce a short hand notation. All our expressions will consist of repeated commutators. Therefore we introduce the notation
+$$
+\left\{X_{1}, X_{2}, \ldots, X_{n}\right\} \equiv\left[X_{1},\left[X_{2},\left[\cdots, X_{n}\right]\right] \cdots\right]
+$$
+
+Then, with $F=-\frac{1}{2} D+\frac{1}{24} S^{2} D+\cdots,$ one finds
+$$
+\begin{aligned}
+\tilde{R}(S, D)=& 2 S-\frac{1}{12} D S D+\frac{1}{960} D\left(8 S^{2}-D^{2}\right) S D \\
+&+\frac{1}{60480} D\left(-51 S^{4}-76 D S D S+33 D^{2} S^{2}+44 S D^{2} S-\frac{3}{8} D^{4}\right) S D \\
+&+\mathcal{O}(S, D)^{9}
+\end{aligned}
+$$
+There are three remarks to be added to this result:
+(1) It is much more compact than the original BCH expansion; already the first two terms of the expansion ( 21.24) correspond to all terms shown in Eq. ( 21.11)
+(2) The coefficients appear to be much smaller than the ones in $(21.11),$ considering the factors $1 / 2$ in Eqs. ( 21.20) that have to be included. We found that, in general, sizeable cancellations occur between the coefficients in ( 21.11)
+(3) However, there is no reason to suspect that the series will actually converge any better. The definitions of $F$ and $\tilde{R}$ may be expected to generate singularities when $P$ and $Q,$ or $S$ and $D$ reach values where $e^{\tilde{R}}$ obtains eigenvalues that return to one, so, for finite matrices, the radius of convergence is expected to be of the order $2 \pi$
+
+In this representation, all terms $\mathcal{H}_{n}(\vec{r})$ in Eq. ( 21.14) with $n$ even, vanish. Using
+$$
+S=-\frac{1}{2} i K, \quad D=-\frac{1}{2} i L, \quad \tilde{R}=-i \tilde{H}
+$$
+one now arrives at the Hamiltonian in the new basis:
+$$
+\begin{array}{l}
+{\tilde{\mathcal{H}}_{1}(\vec{r})=K(\vec{r})} \\
+{\tilde{\mathcal{H}}_{3}(\vec{r})=\frac{1}{96} \sum_{\vec{s}_{1}, \vec{s}_{2}}\left[L(\vec{r}),\left[K\left(\vec{s}_{1}\right), L\left(\vec{s}_{2}\right)\right]\right]} \\
+{\tilde{\mathcal{H}}_{5}(\vec{r})=\frac{1}{30720} \sum_{\vec{s}_{1}, \ldots, \vec{s}_{4}}\left[L(\vec{r}),\left(8\left[K\left(\vec{s}_{1}\right),\left[K\left(\vec{s}_{2}\right)-\left[L\left(\vec{s}_{1}\right),\left[L\left(\vec{s}_{2}\right)\right),\left[K\left(\vec{s}_{3}\right), L\left(\vec{s}_{4}\right)\right]\right]\right]\right]\right.\right.}
+\end{array}
+$$
+and $\tilde{\mathcal{H}}_{7}$ follows from the second line of Eq. ( 21.24) All these commutators are only non-vanishing if the coordinates $\vec{s}_{1}, \vec{s}_{2},$ etc. are all neighbours of the coordinate $\vec{r} .$ It is true that, in the higher order terms, nextto-nearest neighbours may enter, but still, one may observe that these operators all are local functions of the 'fields' $Q(\vec{x}, t),$ and thus we arrive at a Hamiltonian $H$ that can be regarded as the sum over $d$ -dimensional space of a Hamiltonian density $\mathcal{H}(\vec{x}),$ which has the property that
+$$
+\left[\mathcal{H}(\vec{x}), \mathcal{H}\left(\vec{x}^{\prime}\right)\right]=0, \quad \text { if } \quad\left|\vec{x}, \vec{x}^{\prime}\right| \gg 1
+$$
+
+At every finite order of the series, the Hamiltonian density $\mathcal{H}(\vec{x})$ is a finitedimensional Hermitian matrix, and therefore, it will have a lowest eigenvalue $h$ In a large but finite volume $V,$ the total Hamiltonian $H$ will therefore also have a lowest eigenvalue, obeying
+$$
+E_{0}>h V
+$$
+However, it was tacitly assumed that the Baker-Campbell-Hausdorff formula converges. This is usually not the case. One can argue that the series may perhaps converge if sandwiched between two eigenstates $\left|E_{1}\right\rangle$ and $\left|E_{2}\right\rangle$ of $H,$ where $E_{1}$ and
+$E_{2}$ are the eigenvalues, that obey
+$$
+\left|E_{1}-E_{2}\right| \ll 2 \pi
+$$
+We cannot exclude that the resulting effective quantum field theory will depend quite non-trivially on the number of Baker-Campbell-Hausdorff terms that are kept in the expansion.
+
+The Hamiltonian density ( 21.26) may appear to be quite complex and unsuitable to serve as a quantum field theory model, but it is here that we actually expect that the renormalization group will thoroughly cleanse our Hamiltonian, by invoking the mechanism described at the end of Sect. $20.8 .$
+
+
+
+
+
+\begin{equation}\label{21.}
+	
+\end{equation}
+
+
+
+
+
+
+
+\end{document}
+

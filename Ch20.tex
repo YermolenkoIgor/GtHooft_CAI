@@ -1,0 +1,358 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+
+\section{Quantum Field Theory}\label{ch20}
+
+One might not have expected a chapter on standard quantum field theory in a book about the interpretation of quantum mechanics. Yet the notions of locality, of limits in the speed at which signals can travel, and of relativistic invariance, are considered to be central in our theories. This brings us naturally to quantum field theory, since it is now well known that the generic solution to the question how to reconcile relativity with quantum mechanics, is indeed the doctrine called quantum field theory. In this chapter, we give a brief summary of the features of quantum field theory that we shall need to understand in this book.
+
+We have seen that producing quantum Schrödinger equations starting from non quantum mechanical systems is essentially straightforward. However, to employ this observation as a viable ontological interpretation of quantum mechanics, more is needed. The main objection against these concepts has always been that quantum theories obeying locality in the quantum sense, are much more difficult to reproduce with classical systems obeying locality in the classical sense, and impossible according to many.
+
+Locality means that interaction at a distance can only occur with signals that undergo some delay. Locality in the classical sense here means that the classical evolution laws are based on interactions with neighbouring sites only, in such a way that information cannot spread faster than the speed of light. Locality in the quantum sense means the same thing, except that we allow for any kind of quantum mechanical interactions between neighbouring sites. If $\mathcal{O}_{i}(x)$ is an operator only depending on fundamental variables in the immediate vicinity of a space-time point $x,$ enumerated by an index $i$, then quantum locality means that the commutation property
+$$
+\left[\mathcal{O}_{i}(x), \mathcal{O}_{j}\left(x^{\prime}\right)\right]=0
+$$
+holds as soon as the two space-time points $x$ and $x^{\prime}$ are space-like separated:
+$$
+\left(x-x^{\prime}\right)^{2} \equiv\left(\vec{x}-\vec{x}^{\prime}\right)^{2}-c^{2}\left(t-t^{\prime}\right)^{2}>0
+$$
+The relativistic quantized field theories employed in the Standard Model are indeed strictly local in the quantum mechanical sense, obeying Eqs. (20.1), (20.2).
+It is important to recall here the essential features of these systems. A point to be made right-away is, that quantum field theories are quite complicated. This is partly due to the fact that we usually want special relativity to be valid, which is a difficult-while highly interesting- demand. But even without special relativity, there are some fairly intricate issues such as second quantization, perturbation theory, infinities, renormalization, symmetries and anomalies. This is why the topic of this book is actually quite difficult: not only are we attempting to derive quantum mechanics from scratch, but also (fully renormalized) quantum field theory.
+
+Relativistic quantum field theories with a proper continuum limit can only incorporate elementary fields with spin $0, \frac{1}{2}$ and $1 .$ As is well-known, gravity would be propagated by gravitons with spin $2,$ and supergravity would add one or more gravitino species with spin $3 / 2,$ but then, if we want these fields to interact, we would have to be close to the Planck scale, and this would require discretization due to micro states. Since ordinary quantum field theories assume strict continuity, they only apply to the continuum limit, which implies that we can safely omit spin 2 and spin $3 / 2$ fields in those theories. The way this works in quantum field theory is that, at the Standard Model scales, interactions with gravitons and gravitinos are extremely weak.
+
+On the other hand, one could argue that also special relativity is not our first priority, and ignoring special relativity would imply no rigorous constraint on spin. If we ignore special as well as general relativity, we could just as well ignore rotation invariance. $^{1}$ What is left then is a theory of quantized fields enumerated by an index that may or may not represent spin. Later we may wish to reinstate Poincare invariance, at least at the quantum side of the equation, but this will have to be left as an important exercise for the (hopefully near) future.
+
+What we want to keep is a speed limit for signals that describe interactions, so that the notion of locality can be addressed. In practice, an elegant criterion can be given that guarantees this kind of locality. Consider the quantum system in its Heisenberg notation. We have operators $\mathcal{O}_{i}(\vec{x}, t)$ where both the space coordinates $\vec{x}$ and the time coordinate $t$ may be either continuous or discrete. The discrete index $i$ enumerates different types of operators. When our operator fields obey quantum locality, Eqs. ( 20.1) and $(20.2),$ in the continuous case, this means that the Hamiltonian must be the integral of a Hamiltonian density:
+$$
+H=\int \mathrm{d}^{3} \vec{x} \mathcal{H}(\vec{x}, t), \quad\left[\mathcal{H}(\vec{x}, t), \mathcal{H}\left(\vec{x}^{\prime}, t\right)\right]=0 \quad \text { if } \quad \vec{x} \neq \vec{x}^{\prime}
+$$
+while, when $x \rightarrow x^{\prime},$ the commutator $\left[\mathcal{H}(\vec{x}, t), \mathcal{H}\left(\vec{x}^{\prime}, t\right)\right],$ may contain derivatives
+of Dirac delta distributions. Note that, here, we kept equal times $t$ so that these space-time points are space-like separated unless they coincide.
+
+On a discrete space-like lattice, it is tempting to replace Eqs. ( 20.3) by the lattice expressions
+$$
+H=\sum_{\vec{x}} \mathcal{H}(\vec{x}, t), \quad\left[\mathcal{H}(\vec{x}, t), \mathcal{H}\left(\vec{x}^{\prime}, t\right)\right]=0 \quad \text { if } \quad\left|\vec{x}-\vec{x}^{\prime}\right|>a
+$$
+where $a$ is the link size of the lattice. The Hamiltonian densities at neighbouring sites, $\left|\vec{x}-\vec{x}^{\prime}\right|=a,$ will, in general, not commute. Although Eqs. (20.4) may well serve as a good definition of locality, they do not guarantee that signals are subject to a speed limit. Only in the continuum limit, one may recover commutation at space-like separations, ( 20.2) , if special relativity holds (in that limit).
+
+Cellular automata are typically lattice theories. In general, these theories are difficult to reconcile with Lorentz invariance. This does not mean that we plan to give up Lorentz invariance; quite possibly, this important symmetry will be recovered at some stage. But since we want to understand quantum mechanics as a reflection of discreteness at a scale comparable to the Planck scale, we are unable at present to keep Lorentz invariance in our models, so this price is paid, hopefully temporarily. For simplicity, let us now return our attention to continuum quantum field theories, which we can either force to be Lorentz invariant, or replace by lattice versions at some later stage. The present chapter is included here just to emphasize some important features.
+
+
+
+
+\subsection{General Continuum Theories—The Bosonic Case}\label{ch20.1}
+
+Let the field variables be real number operators $\Phi_{i}(\vec{x}, t)$ and their canonical conjugates $P_{i}(\vec{x}, t) .$ Here, $i$ is a discrete index counting independent fields. The commutation rules are postulated to be
+$$
+\begin{array}{l}
+{\left[\Phi_{i}(\vec{x}, t), \Phi_{j}\left(\vec{x}^{\prime}, t\right)\right]=\left[P_{i}(\vec{x}, t), P_{j}\left(\vec{x}^{\prime}, t\right)\right]=0} \\
+{\left[\Phi_{i}(\vec{x}, t), P_{j}\left(\vec{x}^{\prime}, t\right)\right]=i \delta_{i j} \delta^{3}\left(\vec{x}-\vec{x}^{\prime}\right)}
+\end{array}
+$$
+(for simplicity, space was taken to be 3 -dimensional). In bosonic theories, when writing the Hamiltonian as
+$$
+H=\int \mathrm{d} \vec{x} \mathcal{H}(\vec{x})
+$$
+the Hamiltonian density $\mathcal{H}(\vec{x})$ typically takes a form such as
+$$
+\mathcal{H}(\vec{x})=\sum_{i}\left(\frac{1}{2} P_{i}^{2}(\vec{x})+\frac{1}{2}\left(\vec{\partial} \Phi_{i}(\vec{x})\right)^{2}+V(\vec{\Phi}(\vec{x}))\right)
+$$
+If we are in $3+1$ dimensions, and we want the theory to be renormalizable, $V(\vec{\Phi}(\vec{x}))$ must be a polynomial function of $\vec{\Phi},$ of degree 4 or lower. Typically, one starts with
+$$
+V(\vec{\Phi})=\frac{1}{2} \sum_{i} m_{i}^{2} \vec{\Phi}_{i}^{2}+V_{4}(\vec{\phi})
+$$
+
+where $m_{i}$ are the (unrenormalized) masses of the particles of type $i,$ and $V_{4}$ is a homogeneous quartic expression in the fields $\vec{\Phi}_{i}(\vec{x})$ such as a self interaction $\frac{1}{4 !} \lambda \Phi^{4}$ However, when $\vec{\Phi}(\vec{x})$ contains components that form a vector in 3 -space, Lorentz-invariance dictates a deviation from Eq. $(20.7) .$ We then have local gauge invariance, which implies that a constraint has to be imposed. Writing these vector fields as $\vec{A}(\vec{x}),$ and their associated momentum fields as $\vec{E}(\vec{x}),$ one is forced to include a time component $A_{0}(\vec{x})$
+
+Gauge-invariance must then be invoked to ensure that locality and unitarity of the theory are not lost, but the resulting Hamiltonian deviates a bit from Eq. ( 20.7) This deviation is minimal if we choose the space-like radiation gauge
+$$
+\sum_{i=1}^{3} \partial_{i} A_{i}(\vec{x})=0
+$$
+( 0.9)
+since then the Hamiltonian will have the quadratic terms
+$$
+\mathcal{H}_{2}(\vec{x})=\frac{1}{2} \vec{E}^{2}(\vec{x})+\frac{1}{2}\left(\vec{\partial} A_{i}(\vec{x})\right)^{2}-\frac{1}{2}\left(\vec{\partial} A_{0}(\vec{x})\right)^{2}
+$$
+In addition, one might have linear terms,
+$$
+\mathcal{H}_{J}(\vec{x})=\vec{J}(\vec{x}) \cdot \vec{A}(\vec{x})+\varrho(\vec{x}) A_{0}(\vec{x}), \quad \mathcal{H} \equiv \mathcal{H}_{2}+\mathcal{H}_{J}+\mathcal{H}_{\mathrm{int}}, \quad(20.11)
+$$
+where $\vec{J}$ and $\varrho$ are some given background functions. $\vec{J}(\vec{x})$ is a current density and $e(\vec{x})$ a charge density. In a relativistic theory, $\vec{J}$ and $\varrho$ form a 4 -vector. All remaining terms in the Hamiltonian, typically higher powers of the fields, which may cause interactions among particles to occur, are collected in $\mathcal{H}_{\mathrm{int}}$
+
+Notably, the field $A_{0}(\vec{x})$ does not have a canonical partner that would have been called $E_{0}(\vec{x}),$ and therefore, the field $A_{0}$ can be eliminated classically, by extremizing the Hamiltonian $H=\int \mathrm{d} \vec{x} \mathcal{H}(\vec{x}),$ which leads to the Coulomb force between the sources $\varrho .$ This Coulomb force is instantaneous in time, and would have destroyed locality (and hence Lorentz invariance) if we did not have local gauge invariance. This, of course, is a description of quantized field theories in a nut shell, as yet only for bosonic particles. How then the Schrödinger equation is solved by perturbation expansion in powers of the coupling constant(s) $\lambda$ and/or gauge coupling parameters $g,$ is well-known and discussed in the standard text books. $[52,70,121,123]$
+The most important point we need to emphasise is that the above formulation of quantized field theories is easy to replace by discretized versions. All we need to do is replace the partial derivatives $\partial_{i}=\partial / \partial x_{i}$ by lattice derivatives:
+$$
+\partial_{i} \Phi(\vec{x}) \rightarrow \frac{1}{a}\left(\Phi\left(\vec{x}+\vec{e}_{i} a\right)-\Phi(\vec{x})\right)
+$$
+where $a$ is the lattice link size, and $\vec{e}_{i}$ is the unit vector along a lattice link in the i direction. The continuum limit, $a \downarrow 0,$ seems to be deceptively easy to take; in particular, renormalization will now only lead to finite correction terms. Note however, that symmetries such as rotation symmetry and Lorentz invariance will be lost. Recovering such symmetries in more sophisticated models (without taking a continuum limit) is beyond our abilities just now-but notice that our treatment of string theory, Sect. $17.3,$ appears to be heading in the right direction.
+
+
+
+\subsection{Fermionic Field Theories}\label{ch20.2}
+
+Fermionic field systems are also an essential element in the Standard Model. The fundamental variables are the Dirac fields $\psi_{i}(\vec{x})$ and their canonical associates $\psi_{i}^{\dagger}(\vec{x}) .$ They are spinor fields, so that $i$ contains a spinor index. The fields anticommute. The anti-commutation rules are
+$$
+\left\{\psi_{i}^{\dagger}(\vec{x}), \psi_{j}\left(\vec{x}^{\prime}\right)\right\}=\delta_{i j} \delta\left(\vec{x}-\vec{x}^{\prime}\right), \quad\left\{\psi_{i}, \psi_{j}\right\}=\left\{\psi_{i}^{\dagger}, \psi_{j}^{\dagger}\right\}=0
+$$
+where $\{a, b\} \equiv a b+b a .$ Note, that these rules are typical for operators of the form $\left(\begin{array}{ll}{0} & {1} \\ {0} & {0}\end{array}\right)$ and $\left(\begin{array}{ll}{0} & {0} \\ {1} & {0}\end{array}\right),$ so these rules mean that $\psi_{i}(\vec{x})$ is to be regarded as an operator that annihilates an object $i$ at position $\vec{x},$ and $\psi_{i}^{\dagger}(\vec{x})$ creates one. The rules imply that $\psi_{i}^{2}(\vec{x})=0$ and $\left(\psi_{i}^{\dagger}(\vec{x})\right)^{2}=0,$ so that we cannot create or annihilate two objects $i$ at the same spot $\vec{x}$. A state containing two (or more) particles of different type, and/or at different positions $\vec{x},$ will always be antisymmetric under interchange of two such fermions, which is Pauli's principle.
+
+In conventional quantum field theory, one now proceeds to the Lagrange formalism, which works magnificently for doing fast calculations of all sorts. For our purpose, however, we need the Hamiltonian. The quantum Hamiltonian density for a fermionic field theory is (compare Sect. 15.2 ):
+$$
+\mathcal{H}_{F}(\vec{x})=\bar{\psi}(m+W(\vec{\Phi})+\vec{\gamma} \cdot \vec{\partial}) \psi
+$$
+where $W(\vec{\Phi})$ stands short for the Yukawa interaction terms that we may expect, and $\bar{\psi}=\psi^{\dagger} \gamma_{4}$
+The matrices $\gamma_{\mu}, \mu=1,2,3,4,$ need to obey the usual anti-commutation rule
+$$
+\left\{\gamma_{\mu}, \gamma_{v}\right\}=2 \delta_{\mu v}
+$$
+
+which requires them to be at least $4 \times 4$ matrices, so that the spinors are 4 dimensional. One can, however, reduce these to 2 component spinors, called Majorana spinors, by using a constraint such as
+$$
+\psi=C \tilde{\bar{\psi}}=C \tilde{\gamma}_{4} \psi^{\dagger}, \quad \psi^{\dagger}=C^{*} \gamma_{4} \psi
+$$
+where $-$ stands for transposition, and $C$ is a spinor matrix obeying $^{2}, 3$
+$$
+\gamma_{\mu} C=-C \gamma_{\mu}^{*}, \quad C^{\dagger} C=1, \quad C=C^{\dagger}
+$$
+Just as in the bosonic case, we may consider replacing the continuum in space by
+a space-like lattice, using expressions such as Eq. $(20.12),$ at the price of (hopefully temporarily giving up Lorentz invariance.
+
+The Yukawa term$ W(\Phi)$ in Eq. (20.14) may include interactions with gauge fields in the usual way. The question addressed in this work is to what extent Hamiltonians such as the sum of Eqs. (20.7) and (20.14) can be obtained from deterministic theories.
+
+
+\subsection{Standard Second Quantization}\label{ch20.3}
+
+Accurate calculations in field theories for interacting particles are practically impossible without a systematic approximation procedure of some sort. The most efficient approximation scheme used is that of the perturbation expansion in terms of powers of all interaction parameters. This works because, when the interaction terms vanish, the fields will obey linear field equations, which are trivial to solve.
+
+These linear equations happen to coincide with the linear Schrödinger equations obeyed by single particle states. It is as if the wave functions $\left|\phi_{i}(\vec{x}, t)\right\rangle,\left|\psi_{i}(\vec{x}, t)\right\rangle$ and their associated bra states are replaced by classical ontological fields $\Phi_{i}(\vec{x}, t)$ $\psi_{i}(\vec{x}, t)$ and their canonical conjugates, after which the quantization procedure is applied to these fields yet again, replacing Poisson brackets by commutators or anticommutators. This explains the term "second quantization" by which this procedure
+is known. In fact it is not hard to show that the complete Hilbert space of all quantum states of the quantized field system ( 20.5) and ( 20.13) can be described as the product space of all sets of multi particle states that can be formed out of the 'singlequantized' particles.
+
+Then, however, one has to insert the interaction terms of the Hamiltonian. We write
+$$
+\mathcal{H}=\mathcal{H}_{0}+\Delta \mathcal{H}_{0}+\mathcal{H}^{\mathrm{int}}+\Delta \mathcal{H}^{\mathrm{int}}
+$$
+$0.18)$
+
+where $\mathcal{H}_{0}=\mathcal{H}_{2}+\mathcal{H}_{J}$ is the bilinear part of $\mathcal{H},$ and $\mathcal{H}^{\mathrm{int}}$ contains the higher powers of the fields, causing interactions. $\Delta \mathcal{H}_{0}$ and $\Delta \mathcal{H}^{\mathrm{int}}$ are extra terms that are of the same form as $\mathcal{H}_{0}$ and $\mathcal{H}^{\mathrm{int}}$ themselves, but they are taken care of at later stages of the perturbation expansion, just for technical reasons (renormalization). This is how one begins to set up perturbation theory.
+
+Now, in relativistic quantum theories, the single-quantized free particles have energy spectra that take the form $E=\pm \sqrt{p^{2}+m^{2}}$ (for bosons), or $E=\vec{\alpha} \cdot \vec{p}+\beta m$ (for fermions; $\alpha_{i}$ and $\beta$ are the Dirac matrices). This implies that the energies of single particles appear to be unbounded from below. The beauty of the secondquantized theory is that we can replace negative-energy particles by holes of positive energy antiparticles. This automatically ensures a lower bound for the total Hamiltonian.
+
+For the case of fermions, it is easy to accept the idea that negative energy particles have to be regarded as holes in the sea of antiparticles, because Pauli's exclusion principle forbids the presence of more than one particle in any energy level. In the case of bosons, the situation becomes clear if we regard every mode of the energy spectrum as a harmonic oscillator, controlled by creation and annihilation operators.
+Its energy is also bounded from below. Note that, in terms of the quantum field variables $\Phi$ and $\psi$, the Hamiltonian was non-negative by construction—if one disregards the complications due to renormalization.
+
+Thus, the second quantization procedure restores a lower bound to the Hamiltonian, simply by allowing indefinite numbers of particles. We can allow the same mechanism to work for a cellular automaton, if the automaton also can be described in terms of particles. A particle hops over a grid of points in 3-space, and its evolution
+operator generates a Hamiltonian that may be unbounded from below. Second quantization now means that we allow for the presence of indefinite numbers of these particles, which may either behave as fermions or as bosons. The particle-antiparticle procedure then ensures positivity of the total Hamiltonian.
+
+
+
+\subsection{Perturbation Theory}\label{ch20.4}
+
+How to compute the effects of these Hamiltonians in perturbation theory, such as mass spectra, cross sections and lifetimes of the quantized particles that it contains, is standard text material, and not the subject of this treatise, but we do need to know about some essential features for our further discussion.
+
+Split up the Hamiltonian into a "free" $\mathcal{H}_{0}$ and the various interaction parts, as in Eq. $(20.18),$ where the free part only contains terms that are bilinear in the field variables $\Phi_{i}(\vec{x}), P_{i}(\vec{x}), \psi_{i}(\vec{x})$ and $\bar{\psi}_{i}(\vec{x})$ (possibly after having shifted some of the fields by a vacuum value, such as in the Brout-Englert-Higgs mechanism). The interaction Hamiltonian $\mathcal{H}^{\text {int }}$ may also contain bilinear terms, here written as $\Delta \mathcal{H}_{0}$ needed to renormalize divergent effective interactions. There is some freedom as to whether we put parts of these so-called counter terms in $\mathcal{H}_{0}$ or in $\Delta \mathcal{H}_{0},$ and how to split the interaction terms in $\mathcal{H}^{\mathrm{int}}$ and $\Delta \mathcal{H}^{\mathrm{int}},$ which in fact is a choice concerning the book keeping process of the perturbative expansion. The fact that final results of the calculation should be independent of these choices is an important ingredient of what is called the renormalization group of the theory (see Sect. $20.8)$ $\mathcal{H}^{\mathrm{int}}$ is assumed to depend on the coupling parameters $\lambda_{i}, g_{i},$ etc. of the theory, such that $\mathcal{H}^{\text {int }}$ vanishes if these parameters are set to zero.
+
+As already mentioned in Sect. $20.1,$ the analysis is facilitated by the introduction of auxiliary terms in the Hamiltonian, called source terms, which are linear in the fields:
+$$
+\mathcal{H}_{J}(\vec{x}, t)=\sum_{i} J_{i}(\vec{x}, t) \Phi_{i}(\vec{x})+\sum_{i} \bar{\eta}_{i}(\vec{x}, t) \psi_{i}(\vec{x})+\sum_{i} \bar{\psi}_{i}(\vec{x}) \eta_{i}(\vec{x}, t)
+$$
+where the "source functions" $J_{i}(\vec{x}, t), \bar{\eta}_{i}(\vec{x}, t)$ and $\eta_{i}(\vec{x}, t)$ are freely chosen functions of space and time, to be replaced by zero at the end of the computation (the time dependence is not explicitly mentioned here in the field variables, but, in a Heisenberg representation, of course also the fields are time dependent).
+
+These source terms could serve as simple models for the creation of the initial particles in a scattering experiment, as well as the detection process for the particles in the final state, but they can also simply be regarded as useful devices for a mathematical analysis of the physical properties of the system. One can then find all amplitudes one needs to know, by computing at any desired order in perturbation theory, that is, up to certain powers of the coupling parameters and the source functions, the vacuum-to-vacuum amplitude:
+$$
+\begin{array}{l}
+{_{t=\infty}\langle\emptyset | \emptyset\rangle_{t=-\infty}} \\
+{\quad=1-\frac{i}{2} \iint \mathrm{d}^{4} x \mathrm{d}^{4} x^{\prime} J_{i}(x) J_{j}\left(x^{\prime}\right) P_{i j}\left(x-x^{\prime}\right)} \\
+{\quad+\frac{1}{6} \iint \mathrm{d}^{4} x \mathrm{d}^{4} x^{\prime} \mathrm{d}^{4} x^{\prime \prime} W_{i j k}\left(x, x^{\prime}, x^{\prime \prime}\right) J_{i}(x) J_{j}\left(x^{\prime}\right) J_{k}\left(x^{\prime \prime}\right)+\cdots}
+\end{array}
+$$
+where $x$ stands short for the space-time coordinates $(\vec{x}, t),$ and the correlation functions $P_{i j}\left(x-x^{\prime}\right), W_{i j k}\left(x, x^{\prime}, x^{\prime \prime}\right)$ and many more terms of the sequence are to be calculated. Physically, this means that we compute expectation values of the products of operators $\Phi_{i}(\vec{x}, t), \bar{\psi}_{i}(\vec{x}, t)$ and $\psi_{i}(\vec{x}, t)$ of Eq. ( 20.19) in a Heisenberg representation. Local products of these operators also follow from the expressions ( 20.20)
+if we take space-time points $x$ and $x^{\prime}$ to coincide. The algorithm for the calculation of the two-point functions $P,$ the three-point functions $W,$ etc., is conveniently summarized in the so-called Feynman rules, for which we refer to the standard text books. $[27,121,123]$
+
+
+\subsubsection{Non-convergence of the Coupling Constant Expansion}\label{ch20.4.1}
+
+There are some conditions where particles interact strongly. Quarks are fermionic particles that interact so strongly that the forces between them keep them permanently bound in hadrons, the so-called quark confinement mechanism. This, however, only happens at the distance scale of the StandardModel.When extrapolated to the Planck scale, these strong interactions have been calculated to be about as weak as the other forces, notably electromagnetism and the weak force. This means that, in a conveniently large domain near the Planck scale, all perturbation expansions may be rapidly convergent: there, one never needs to know the very high-order perturbative correction terms, since these are many times smaller than the usual margins of error in our description of the dynamics.
+
+It now so happens that, when we apply second quantization in our cellular automaton models, something very similar may happen. If we choose our interactions to originate from rare coincidences in the cellular configurations, then most of the interaction events may be far separated at the Planck scale. This may imply that we have freely moving particles interacting only weakly by means of an interaction Hamiltonian. Since this Hamiltonian starts out to be local, only a few higher order calculations may suffice to obtain an accurate description of the dynamics.
+
+We can now consider combining the quantum field theoretic perturbation expansion with the expansion needed to generate the interaction Hamiltonian itself. The resulting theory will still be accurate in the domain close to the Planck scale. Our proposal is to start from this theory, and to apply the usual renormalization group procedures (Sect. 20.8) to transform everything to the Standard Model scale.
+
+\subsection{The Algebraic Structure of the General, Renormalizable, Relativistic Quantum Field Theory}\label{ch20.5}
+
+The reasons for limiting ourselves to renormalizable quantum field theories are not completely obvious. When coupling strengths become large, renormalizable field theories may generate poles where the perturbation expansion diverges. We call these Landau poles. Renormalization is then of little help. The renormalization group (Sect. 20.8) explains how the Landau poles can arise. If a Landau pole emerges in the small-distance domain, one has to conclude that the renormalization procedure fails, and here is little one can do about this. If however a Landau pole is related to a large distance divergence, it can be attributed to non-canonical behaviour of the force fields at large distances, which can be investigated and understood.
+
+Landau poles do also occur when the couplings are weak, but since they are nonperturbative effects, these poles retreat to very distant domains of extremely high energies, so that they quickly turn harmless. This is the case where, by demandingrenormalizability, we can select out a precisely defined class of models that are mathematically accurate, and most useful for comparison with experiments. They are not infinitely accurate, but, as we shall see in Sect. 22.1, also the procedure that we can use to derive a field theory out of a cellular automaton, will have an accuracy that appears to be limited by the interaction strength.
+Finally, we note that, indeed, in the Standard Model itself, the interaction parameters are remarkably small. This was not known or expected to be the case, a few decades ago.
+
+Relativistically invariant, renormalizable quantum field theories have a remarkably rich mathematical structure. There are vector fields (for elementary particles with spin 1 ), spinor fields (fermions with spin $1 / 2$ ), and scalars (spin 0 ).
+
+The vector fields have to be associated with a local gauge theory, usually of the Yang-Mills type. The number of distinct vector particle species equals the number of dimensions, also called the rank, of the local gauge group. Electromagnetism has
+$U(1)$ as its local gauge group; the dimension is $1,$ so there is one photon species. The electro-weak interactions have this local gauge theory enlarged to $U(1) \otimes$ $S U(2),$ with group dimension $4,$ while the strong force adds to this $S U(3),$ with dimension 8
+
+The fermionic and the scalar fields must all come as representations of the gauge group. They each transform trivially or non-trivially under local gauge transformations. This determines how these particles couple to the vectorial gauge fields. The fermions are based on Dirac's field equation, and the scalars start off with the Klein-Gordon equation. The interactions between these fields are written as Yukawa terms for the fermions, and quartic, sometimes also cubic, self interactions for the scalars. The allowed couplings are severely constrained by the condition that the system has to be renormalizable and gauge-invariant.
+
+After all algebraic equations have been written down, it must be checked explicitly whether there are chiral anomalies. These are clashes between currentconservation laws in the chiral symmetries one might expect in the theory. Anomalies that would be harmful for the self consistency of the theory only occur when right-handed fermions couple differently to the gauge fields than left handed ones. One then has to see to it that these anomalies cancel out. They indeed do in the Standard Model.
+
+In the Standard Model, the algebra turns out to be arranged in such a way that the fermions come as three identical copies ("generations") of quarks and leptons. Quarks come as triplet representations of the gauge $S U(3)$ group, while the leptons are $S U(3)$ singlets. All fermions couple, at least to some extent, to the $S U(2) \otimes U(1)$ gauge fields, with the exceptions of the right-handed components of the neutrinos, which do not couple to the gauge fields at all.
+
+In principle, however, the mathematical rules known today would have allowed just any compact Lie group as the gauge group, and any kinds of representations for the fermions and the scalars, as long as there are not too many of those.
+
+This summary here illustrates that the mathematical structure of the generic quantum field theory, and the Standard Model in particular, is fairly complex. It would have to be reproduced in a deterministic theory of Nature. Further details are to be found in numerous text books. See for instance $[27,52,70]$
+
+\subsection{Vacuum Fluctuations, Correlations and Commutators}\label{ch20.6}
+
+Because all contributions to our Hamiltonian are translation invariant, one expects the correlation functions to be translation invariant as well, and this is a good reason to consider their Fourier transforms, so, instead of $x$ space, one considers $k$ space:
+$$
+P_{i j}\left(x^{(1)}-x^{(2)}\right)=(2 \pi)^{-4} \int \mathrm{d}^{4} k \hat{P}_{i j}(k) e^{i k \cdot\left(x^{(1)}-x^{(2)}\right)}
+$$
+where we will often omit the caret ($\hat{ }$). Disregarding factors $2 \pi$ for the moment, one finds that the two-point functions are built from elementary expressions such as the Feynman propagator,
+$$
+\begin{aligned}
+\Delta_{m}^{F}(x) & \equiv-i \int \mathrm{d}^{4} k \frac{e^{i k x}}{k^{2}+m^{2}-i \varepsilon} \\
+x &=x^{(1)}-x^{(2)}, \quad k^{2}=\vec{k}^{2}-k_{0}^{2}
+\end{aligned}
+$$
+where $\varepsilon$ is an infinitesimal positive number, indicating how one is allowed to arrange the complex contour when $k_{0}$ is allowed to be complex. This propagator describes the contribution of a single, non interacting particle to the two-point correlation function. If there are interactions, one finds that, quite generally, the two-point correlation functions take the form of a dressed propagator:
+$$
+\Delta_{F}(x)=\int_{0}^{\infty} \mathrm{d} m \varrho(m) \Delta_{m}^{F}(x)
+$$
+where $\varrho(m)$ is only defined for $m \geq 0$ and it is always non-negative. This property is dictated by unitarity and positivity of the energy, and always holds exactly in a relativistic quantum field theory $[123] .$ The function $\varrho(m)$ can be regarded as the probability that an intermediate state emerges whose centre-of-mass energy is given by the number $m .$ In turn, $\varrho(m)$ can be computed in terms of Feynman diagrams with two external legs; it describes what may happen to a virtual particle as it travels from $x^{(2)}$ to $x^{(1)} .$ Diagrams with more external legs (which are usually the contributions to the scattering matrix with given numbers of free particles asymptotically far away in the in-state and the out-state), can be computed with these elementary functions
+as building blocks. The two-point function physically corresponds to the vacuum expectation value of a time-ordered product of operators:
+$$
+P_{i j}\left(x^{(1)}-x^{(2)}\right)=\left\langle\emptyset\left|T\left(\Phi_{i}\left(x^{(1)}\right), \Phi_{j}\left(x^{(2)}\right)|\emptyset\rangle\right.\right.\right.
+$$
+where
+
+$$
+\begin{aligned}
+T\left(A\left(t_{1}\right), B\left(t_{2}\right)\right) &=A\left(t_{1}\right) B\left(t_{2}\right), \quad \text { if } t_{1}>t_{2} \\
+&=B\left(t_{2}\right) A\left(t_{1}\right), \quad \text { if } t_{2}>t_{1}
+\end{aligned}
+$$
+(for fermions, this is to be replaced by the $P$ product: a minus sign is added if two fermions are interchanged).
+
+We shall now show how, in explicit calculations, it is always found that two operators $\mathcal{O}_{1}\left(x^{(1)}\right)$ and $\mathcal{O}_{2}\left(x^{(2)}\right)$ commute when they both are local functions of the fields $F_{i}(\vec{x}, t),$ and when their space-time points are space-like separated:
+$$
+(\vec{x})^{2}-\left(x^{0}\right)^{2}>0, \quad x=x^{(1)}-x^{(2)}
+$$
+To this end, one introduces the on-shell propagators:
+$$
+\Delta_{m}^{\pm}(x)=2 \pi \int \mathrm{d}^{4} k e^{i k x} \delta\left(k^{2}+m^{2}\right) \theta\left(\pm k^{0}\right) ; \quad k x=\vec{k} \cdot \vec{x}-k^{0} x^{0}
+$$
+By contour integration, one easily derives:
+$$
+\begin{aligned}
+\Delta_{m}^{F}(x) &=\Delta_{m}^{+}(x) \quad \text { if } x^{0}>0 \\
+&=\Delta_{m}^{-}(x)=\Delta_{m}^{+}(-x) \quad \text { if } x^{0}<0 \\
+\Delta_{m}^{F *}(x) &=\Delta_{m}^{-}(x) \quad \text { if } x^{0}>0 \\
+&=\Delta_{m}^{+}(x) \quad \text { if } x^{0}<0
+\end{aligned}
+$$
+Here, $\Delta_{m}^{F *}$ is obtained from the Feynman propagator $D_{m}^{F}$ in Eq. ( 20.22) by replacing $i$ with $-i$.
+
+Now we can use the fact that the expressions for $\Delta_{m}^{F}(x)$ and $\Delta_{m}^{\pm}(x)$ are Lorentzinvariant. Therefore, if $x$ is space-like, one can always go to a Lorentz frame where $x^{0}>0$ or a Lorentz frame where $x^{0}<0,$ so then
+$$
+\Delta_{m}^{F}(x)=\Delta_{m}^{+}(x)=\Delta_{m}^{-}(x)=\Delta_{m}^{F *}(x)=\Delta_{m}^{F}(-x)
+$$
+This implies that, in Eq. $(20.24),$ we can always change the order of the two operators $\mathcal{O}\left(x^{(1)}\right)$ and $\mathcal{O}\left(x^{(2)}\right)$ if $x^{(1)}$ and $x^{(2)}$ are space-like separated. Indeed, for all two-point functions, one can derive from unitarity that they can be described by a dressed propagator of the form $(20.23),$ where, due to Lorentz invariance, $\varrho(m)$ cannot depend on the sign of $x^{0} .$ The only condition needed in this argument is that the operator $\mathcal{O}_{1}\left(x^{(1)}\right)$ is a local function of the fields $\Phi_{i}\left(x^{(1)}\right),$ and the same
+for $\mathcal{O}_{2}\left(x^{(2)}\right) .$ To prove that composite fields have two-point functions of the form $(20.23),$ using unitarity and positivity of the Hamiltonian, we refer to the literature [121]. To see that Eqs. ( 20.29) indeed imply that commutators between space-like separated operators vanish, and that this implies the non existence of information carrying signals between such points, we refer to Sect. 20.7
+
+Now it is crucial to notice that the Feynman propagator $\Delta_{m}^{F}(x)$ itself does not vanish at space-like separations. In general, one finds for free fields with mass $m,$ at vanishing $x^{(1) 0}-x^{(2) 0},$ and writing $\vec{r}=\vec{x}^{(1)}-\vec{x}^{(2)}$
+$$
+\begin{aligned}
+\left\langle\emptyset\left|T\left(\Phi\left(x^{(1)}\right), \Phi\left(x^{(2)}\right)|\emptyset\rangle\right.\right.\right.&=(2 \pi)^{-4} \Delta_{m}^{F}(0, \vec{r})=\int \mathrm{d}^{3} \vec{k} \frac{1}{2(2 \pi)^{3} \sqrt{\vec{k}^{2}+m^{2}}} e^{i \vec{k} \cdot \vec{r}} \\
+&=\frac{1}{(2 \pi)^{2}} \int_{0}^{\infty} \frac{k^{2}}{\sqrt{k^{2}+m^{2}}} e^{i k|\vec{r}|}
+\end{aligned}
+$$
+
+but, since the fields here commute, we can omit the $T$ symbol. When the product $m|\vec{r}|$ becomes large, this vanishes rapidly. But when $m$ vanishes, we have long-range correlations:
+$$
+\langle\emptyset|\Phi(0, \vec{r}) \Phi(0, \overrightarrow{0})| \emptyset\rangle=\frac{1}{(2 \pi)^{2} \vec{r}^{2}}
+$$
+For instance, for the photon field, the vacuum correlation function for the two-point function is, in the Feynman gauge,
+$$
+\left\langle\emptyset\left|A_{\mu}(0, \vec{r}) A_{v}(0, \overrightarrow{0})\right| \emptyset\right\rangle=\frac{g_{\mu v}}{(2 \pi)^{2} \vec{r}^{2}}
+$$
+This means that we $d o$ have correlations over space-like distances. We attribute this to the fact that we always do physics with states that are very close to the vacuum state. The correlations are non-vanishing in the vacuum, and in all states close to the vacuum (such as all $n$ -particle states, with $n$ finite). One may imagine that, at very high or infinite temperature, all quantum states will contribute with equal probabilities to the intermediate states, and this may wipe out the correlations, but today's physics always stays restricted to temperatures that are very low compared
+to the Planck scale, most of the time, at most places in the Universe. There is even more one can say. Due to the special analytic structure of the propagators $\Delta_{m}^{F}(x),$ the $n$ point functions can be analytically continued from Minkowski space–time to Euclidean space–time and back. This means that, if the Euclidean correlation functions are known, also the scattering matrix elements in Minkowski space–time follow, so that the entire evolution process at a given initial state can be derived if the space like correlation functions are known. Therefore, if someone thinks there is “conspiracy” in the space-like correlations that leads to peculiar phenomena later or earlier in time, then this might be explained in terms of the fundamental mathematical structure of a quantum field theory. The author suspects that
+this explains why “conspiracy” in “unlikely” space-like correlations seems to invalidate the Bell and CHSH inequalities, while in fact this may be seen as a natural phenomenon. In any case, it should be obvious from the observations above, that the correlations in quantized field theories do not require any conspiracy, but are totally natural.
+
+\subsection{Commutators and Signals}\label{ch20.7}
+
+We shall now show that, just because all space-like separated sets of operators commute, no signal can be exchanged that goes faster than light, no matter how entangled the particles are that one looks at. This holds for all relativistic quantum field theories, and in particular for the Standard Model. This fact is sometimes overlooked in studies of peculiar quantum phenomena.
+
+Of course, if we replace the space-time continuum by a lattice in space, while time stays continuous, we lose Lorentz invariance, so that signals can go much faster, in principle (they still cannot go backwards in time).
+
+Consider a field $\phi(x),$ where $x$ is a point in space-time. Let the field be selfadjoint:
+$$
+\phi(x)=\phi^{\dagger}(x)
+$$
+In conventional quantum field theories, fields are operators in the sense that they measure things and at the same time modify the state, all at one space-time point $x$ Usually, the field averages in vacuum are zero:
+$$
+\langle\emptyset|\phi(x)| \emptyset\rangle= 0
+$$
+Can a signal arrive at a point $x^{(1)}$ when transmitted from a point $x^{(2)} ?$ To find out, take the field operators $\phi\left(x^{(1)}\right)$ and $\phi\left(x^{(2)}\right) .$ Let us take the case $t^{(1)} \geq t^{(2)} .$ In this case, consider the propagator
+$$
+\begin{aligned}
+\left\langle\emptyset\left|T\left(\phi\left(x^{(1)}\right), \phi\left(x^{(2)}\right)\right)\right| \Phi\right\rangle &=\left\langle\Phi\left|\phi\left(x^{(1)}\right) \phi\left(x^{(2)}\right)\right| \emptyset\right\rangle \\
+&=\Delta_{m}^{F}\left(x^{(1)}-x^{(2)}\right)=\Delta_{m}^{+}\left(x^{(1)}-x^{(2)}\right)
+\end{aligned}
+$$
+It tells us what the correlations are between the field values at $x^{(1)}$ and at $x^{(2)} .$ This quantity does not vanish, as is typical for correlation functions, even when points are space-like separated.
+
+The question is now whether the operation of the field at $x^{(2)}$ can affect the state
+at $x^{(1)} .$ This would be the case if the result of the product of the actions of the fields depends on their order, and so we ask: to what extent does the expression ( 20.35) differ from
+$$
+\begin{aligned}
+\left\langle\emptyset\left|\phi\left(x^{(2)}\right) \phi\left(x^{(1)}\right)\right| \emptyset\right\rangle &=\left(\left\langle\emptyset\left|\phi^{\dagger}\left(x^{(1)}\right) \phi^{\dagger}\left(x^{(2)}\right)\right| \emptyset\right\rangle\right)^{*}=\left(\left\langle\emptyset\left|T\left(\phi\left(x^{(1)}\right), \phi\left(x^{(2)}\right)\right)\right| \emptyset\right\rangle\right)^{*} \\
+&=\Delta_{m}^{F *}\left(x^{(1)}-x^{(2)}\right)=\Delta_{m}^{-}\left(x^{(1)}-x^{(2)}\right)
+\end{aligned}
+$$
+In stead of $\Delta_{m}(x)$ we could have considered the dressed propagators of the interacting fields, which, from general principles, can be shown to take the form of Eq. $(20.23) .$ We always end up with the identity $(20.29),$ which means that the commutator vanishes:
+$$
+\left\langle\emptyset\left|\left[\phi\left(x^{(1)}\right), \phi\left(x^{(2)}\right)\right]\right| \emptyset\right\rangle= 0
+$$
+if $x^{(1)}$ and $x^{(2)}$ are space-like separated. Thus, it makes no difference whether we act with $\phi\left(x^{(1)}\right)$ before or after we let $\phi\left(x^{(2)}\right)$ act on the vacuum. This means that no signal can be sent from $x^{(2)}$ to $x^{(1)}$ if it would have to go faster than light. since Eqs. ( 20.29) can be proved to hold exactly in all orders of the perturbation expansion in quantum field theory, just by using the general properties ( 20.28) of the propagators in the theory, one concludes that conventional quantum field theories never allow signals to be passed on faster than light. This is very important since less rigorous reasoning starting from the possible production of entangled particles, sometimes make investigators believe that there are 'spooky signals' going faster than light in quantum systems. Whatever propagates faster than light, however, can never carry information. This holds for quantum field theories and it holds for cellular automata.
+
+
+\subsection{The Renormalization Group}\label{ch20.8}
+
+A feature of quantum field theories that plays a special role in our considerations is the renormalization group. This group consists of symmetry transformations that in their earliest form were assumed to be associated to the procedure of adding renormalization counter terms to masses and interaction coefficients of the theory. These counter terms are necessary to assure that higher order corrections do not become infinitely large when systematic (perturbative) calculations are performed. The ambiguity in separating interaction parameters from the counter terms can be regarded as a symmetry of the theory [80]. 
+
+In practice, this kind of symmetry becomes important when one applies scale transformations in a theory: at large distances, the counter terms should be chosen differently from what they are at a small distance scale, if in both cases we require that higher order corrections are kept small. In practice, this has an important consequence for most quantum field theories: a scale transformation must be accompanied by small, calculable corrections to all mass terms and interaction coefficients. This then adds ‘anomalous dimensions’ to the mass and coupling parameters [17, 82, 123]. In lowest order, these anomalies are easy to calculate, and the outcome is typically:
+
+$$
+\begin{array}{l}
+{\frac{\mu \mathrm{d}}{\mathrm{d} \mu} \lambda(\mu)=\beta_{\lambda} \lambda(\mu)^{2}+\mathcal{O}\left(\lambda(\mu)^{3}\right)} \\
+{\frac{\mu \mathrm{d}}{\mathrm{d} \mu} m(\mu)=\beta_{m} \lambda(\mu) m(\mu)+\mathcal{O}\left(\lambda(\mu)^{2}\right)}
+\end{array}
+$$
+with dimensionless coefficients $\beta_{\lambda}$ and $\beta_{m} .$ Here, $\mu$ represents the mass scale at which the coupling and mass parameters are being considered.
+
+In gauge theories such as quantum electrodynamics, it is the charge squared, $e(\mu)^{2},$ or equivalently, the fine structure constant $\alpha(\mu),$ that plays the role of the running coupling parameter $\lambda(\mu) .$ A special feature for non-Abelian gauge theories is that, there, the coefficient $\beta_{g^{2}}$ receives a large negative contribution from the gauge self couplings, so, unless there are many charged fields present, this renormalization group coefficient is negative.
+
+Note, that Eqs. ( 20.38) cause important modifications in $\lambda(\mu)$ and $m(\mu)$ when $\log (\mu)$ varies over large values. It is important to observe, that the consideration of the renormalization group would have been guite insignificant had there not been large scale differences that are relevant for the theory. These differences originate from the fact that we have very large and very tiny masses in the system. In the effective Hamiltonians that we might be able to obtain from a cellular automaton, it is not quite clear how such large scale differences could arise. Presumably, we have to work with different symmetry features, each symmetry being broken at a different scale. Here we just note that this is not self-evident. The problem that we encounter here is the hierarchy problem, the fact that enormously different lengthmass-and time scales govern our world, see Sect. $8.2 .$ This is not only a problem for our theory here, it is a problem that will have to be confronted by any theory addressing physics at the Planck scale.
+
+The mass and coupling parameters of a theory are not the only quantities that are transformed in a non-trivial way under a scale transformation. All local operators $\mathcal{O}(\vec{x}, t)$ will receive finite renormalizations when scale transformations are performed. When composite operators are formed by locally multiplying different kinds of fields, the operator product expansion requires scale dependent counter terms. What this means is that operator expressions obtained by multiplying fields together undergo thorough changes and mixtures upon large scale transformations. The transformation that leads us from the Planck scale to the Standard Model scale is probably such a large scale transformation,4 so that not only the masses and couplings that we observe today, but also the fields and operator combinations that we use in the Standard Model today, will be quite different from what they may look
+like at the Planck scale.
+
+Note that, when a renormalization group transformation is performed, couplings, fields and operators re-arrange themselves according to their canonical dimensions. When going from high mass scales to low mass scales, coefficients with highest mass dimensions, and operators with lowest mass dimensions, become most significant. This implies that, seen from a large distance scale, the most complicated theories simplify since, complicated, composite fields, as well as the coefficients they are associated with, will rapidly become insignificant. This is generally assumed to be the technical reason why all our ‘effective’ theories at the present mass scale are renormalizable field theories. Non-renormalizable coefficients have become insignificant. Even if our local Hamiltonian density may be quite ugly at the
+Planck scale, it will come out as a clean, renormalizable theory at scales such as the Standard Model scale, exactly as the Standard Model itself, which was arrived at by fitting the phenomena observed today.
+The features of the renormalization group briefly discussed here, are strongly linked to Lorentz invariance. Without this invariance group, scaling would be a lot more complex, as we can see in condensed matter physics. This is the reason why we do not plan to give up Lorentz invariance without a fight.
+
+
+
+
+
+
+\begin{equation}\label{20.}
+	
+\end{equation}
+
+
+
+
+
+\end{document}
+

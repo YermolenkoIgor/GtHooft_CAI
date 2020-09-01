@@ -1,11 +1,18 @@
-%\topmargin=-40pt
-%\textheight=650pt
-\usepackage[left=3cm,right=2cm,
-    top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+
+
+\renewcommand{\baselinestretch}{1.5}
+
+%\usepackage[left=2.0cm,right=1.5cm,
+   % top=2.5cm,bottom=2.5cm,bindingoffset=0cm]{geometry}
 \usepackage[english,russian]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{scrextend}
+\usepackage[12pt]{extsizes}
+\usepackage[a4paper, left=20mm, right=20mm, top=20mm, bottom=20mm]{geometry}
+
+%\documentclass[a4paper,fontsize=14bp]{extreport}
 %всякие настройки по желанию%
-\usepackage[colorlinks=true,linkcolor=blue,unicode=true]{hyperref}
+\usepackage[colorlinks=true,linkcolor=black,unicode=true]{hyperref}% включить ссылки
 \usepackage{euscript}
 \usepackage{supertabular}
 \usepackage[pdftex]{graphicx}
@@ -14,4 +21,11 @@
 \usepackage[noend]{algorithmic}
 \usepackage[ruled]{algorithm}
 \usepackage{ulem} % sout
+\usepackage{cite} % ссылки по Госту 
+%
+%\usepackage[nooneline]{caption} \captionsetup[table]{justification=raggedright} %\captionsetup[figure]{justification=centering,labelsep=endash}
+
 \selectlanguage{russian}
+
+%\renewcommand{\rmdefault}{ftm} % Times New Roman
+%\frenchspacing

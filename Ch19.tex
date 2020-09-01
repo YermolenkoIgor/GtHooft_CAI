@@ -1,0 +1,414 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+
+\section{Дискретизированный гамильтонов формализм в теории P}\label{ch19}
+\subsection{Вакуумное состояние и двойная роль гамильтониана (продолжение) }\label{ch19.1}
+
+Закон сохранения энергии обычно рассматривается как интересная и важная особенность как классической, так и квантовой механики, но часто не до конца осознается, насколько важна роль этого закона в действительности. Важность энергии заключается в том, что она сохраняется, определяется локально и не может быть отрицательной. Это позволяет нам определить вакуум как единое квантовое состояние вселенной, которое имеет минимально возможную энергию (или энергию на единицу объема).
+
+Рассмотрим небольшое возмущение этого вакуума: легкая частица или пылинка. Он несет только небольшое количество энергии. В нашем мире эта энергия не может самопроизвольно возрастать, потому что окружающий вакуум не может ее доставить, а ее собственная энергия не может возрасти. Все переходы, все процессы внутри зерна пыли могут преобразовать объект только в другие состояния с точно такой же энергией. Если объект распадается, продукты распада должны иметь еще меньшее количество энергии. Поскольку число различных состояний с одинаковой или меньшей энергией очень ограничено, мало что может произойти; объект представляет собой очень стабильную ситуацию.
+
+Но теперь представьте инопланетный мир, в котором концепция консервативной, позитивной энергии не существует. Возможно, наш инопланетный мир, тем не менее, имел бы что-то вроде вакуумного состояния, но это должно было бы быть определено иначе В этом инопланетном мире наш крошечный объект может самопроизвольно расти, поскольку мы постулировали, что нет такого консервативного количества, как энергия, чтобы не дать ему этого сделать. Это означает, что малейшие возмущения вокруг состояния вакуума дестабилизируют этот вакуум. Точно так же любое другое начальное состояние может оказаться нестабильным. 
+
+We can state this differently: solutions of the equations of motion are stationary if they are in thermal equilibrium (possibly with one or more chemical potentials added. In a thermal equilibrium, we have the Boltzmann distribution:
+$$
+W_{i}=C e^{-\beta E_{i}+\sum_{j} \mu_{j} R_{j i}}
+$$
+where $\beta=1 / k T$ is the inverse of the temperature $T,$ with Boltzmann constant $k$ and $i$ labels the states; $\mu_{j}$ are chemical potentials, and $R_{j i}$ the corresponding conserved quantities.
+If the energies $E_{i}$ were not properly bounded from below, the lowest energies would cause this expression to diverge, particularly at low temperatures.
+
+What is needed is a lower bound of the energies $E_{i}$ so as to ensure stability of our world. Furthermore, having a ground state is very important to construct systematic approximations to solutions of the time-independent Schrödinger equation, using extremum principles. This is not just a technical problem, it would raise doubt on the mere existence of correct solutions to Schrödinger's equation, if no procedure could be described that allows one to construct such solutions systematically.
+
+In our world we do have a Hamiltonian function, equal to the total energy, that is locally conserved and bounded from below. Note that "locally conserved" means that a locally defined tensor $T_{\mu v}(\vec{x}, t)$ exists that obeys a local conservation law, $\partial_{\mu} T_{\mu \nu}=0,$ and this feature is connected in important ways not only to the theory of special relativity, but also to general relativity.
+
+Thus, the first role played by the Hamiltonian is that it brings law and order in the universe, by being ( 1 ) conserved in time, (2) bounded from below, and (3) local (that is, it is the sum of completely localized contributions).
+
+Deriving an equation of motion that permits the existence of such a function, is not easy, but was made possible by the Hamiltonian procedure, first worked out for continuum theories (see Sect. $5.6 .2 \text { in Part I })$
+
+Hamilton's equations are the most natural ones that guarantee this mechanism to work: first make a judicious choice of kinetic variables $x_{i}$ and $p_{i},$ then start with any function $H\left(\left\{x_{i}, p_{j}\right\}\right)$ that is bounded and local as desired, and subsequently write down the equations for $\mathrm{d} x_{i} / \mathrm{d} t$ and $\mathrm{d} p_{j} / \mathrm{d} t$ that guarantee that $\mathrm{d} H / \mathrm{d} t=0$ The principle is then carried over to quantum mechanics in the standard way.
+
+Thus, in standard physics, we have a function or operator called Hamiltonian that represents the conserved energy on the one hand, and it generates the equations of motion on the other.
+
+And now, we argue that, being such a fundamental notion, the Hamiltonian principle should also exist for discrete systems.
+
+
+\subsection{Задача Гамильтона для дискретных детерминированных систем}\label{ch19.2}
+
+Consider now a discrete, deterministic system. Inevitably, time will also be discrete. Time steps must be controlled by a deterministic evolution operator, which implies that there must be a smallest time unit, call it $\delta t .$ When we write the evolution operator $U(\delta t)$ as $U(\delta t)=e^{-i E^{\text {quation }} \delta t}$ then $E^{\text {quant is defined }}$modulo $2 \pi / \delta t,$ which means that we can always choose $E^{\text {quant to lie in the segment }}$
+$$
+0 \leq E^{\text {quant }}<2 \pi / \delta t
+$$
+Instead, in the real world, energy is an additively conserved quantity without any periodicity. In the $P Q$ formalism, we have seen what the best way is to cure such a situation, and it is natural to try the same trick for time and energy: we must add a conserved, discrete, integer quantum to the Hamiltonian operator: $E^{\text {class }}=2 \pi N / \delta t$ so that we have an absolutely conserved energy,
+$$
+E \stackrel{?}{=} E^{\text {quant }}+E^{\text {class }}
+$$
+In the classical theory, we can only use $E^{\text {class to ensure that our system is stable, as }}$ described in the previous section.
+
+In principle, it may seem to be easy to formulate a deterministic classical system where such a quantity $E^{\text {class }}$ can be defined, but, as we will see, there will be some obstacles of a practical nature. Note that, if Eq. ( 19.3) is used to define the total energy, and if $E^{\text {class }}$ reaches to infinity, then time can be redefined to be a continuous variable, since now we can substitute any value $t$ in the evolution operator $U(t)=$ $e^{-i E t}$
+One difficulty can be spotted right away: usually, we shall demand that energy be an extensive quantity, that is, for two widely separated systems we expect
+
+where $E^{\mathrm{int}}$ can be expected to be small, or even negligible. But then, if both $E_{1}$ and $E_{2}$ are split into a classical part and a quantum part, then either the quantum part of $E^{\text {tot will exceed its bounds }(19.2), \text { or } E^{\text {class will not be extensive, that is, it will not }}}$ even approximately be the sum of the classical parts of $E_{1}$ and $E_{2}$
+
+An other way of phrasing the problem is that one might wish to write the total energy $E^{\mathrm{tot}}$ as
+$$
+E^{\mathrm{tot}}=\sum_{\text {lattice sites } i} E_{i} \rightarrow \int \mathrm{d}^{d} \vec{x} \mathcal{H}(\vec{x})
+$$
+where $E_{i}$ or $\mathcal{H}(\vec{x})$ is the energy density. It may be possible to spread $E_{\text {class over }}^{\text {tot }}$ the lattice, and it may be possible to rewrite $E^{\text {quant }}$ as a sum over lattice sites, but then it remains hard to see that the total quantum part stays confined to the interval
+$[0,2 \pi / \delta t)$ while it is treated as an extensive variable at the same time. Can the excesses be stowed in $E^{\mathrm{int}} ?$
+
+This question will be investigated further in our treatment of the technical details
+of the cellular automaton, Chap. 22
+
+
+\subsection{Сохраняемая классическая энергия в теории PQ}\label{ch19.3}
+
+If there is a conserved classical energy $E^{\mathrm{class}}(\vec{P}, \vec{Q}),$ then the set of $\vec{P}, \vec{Q}$ values with the same total energy $E$ forms closed surfaces $\Sigma_{E} .$ All we need to demand for a theory in $(\vec{P}, \vec{Q})$ space is that the finite-time evolution operator $U(\delta t)$ generates motion along these surfaces $[116] .$ That does not sound hard, but in practice, to generate evolution laws with this property is not so easy. This is because we often also demand that our evolution operator $U(\delta t)$ be time-reversible: there must exist an inverse, $U^{-1}(\delta t)$
+In classical mechanics of continuous systems, the problem of characterizing some evolution law that keeps the energy conserved was solved: let the continuous degrees of freedom be some classical real numbers $\left\{q_{i}(t), p_{i}(t)\right\},$ and take energy
+$E$ to be some function
+$$
+E=H(\vec{p}, \vec{q})=T(\vec{p})+V(\vec{q})+\vec{p} \cdot \vec{A}(\vec{q})
+$$
+although more general functions that are bounded from below are also admitted. The last term, describing typically magnetic forces, often occurs in practical examples, but may be omitted for simplicity to follow the general argument. Then take as our evolution law:
+$$
+\frac{\mathrm{d} q_{i}}{\mathrm{d} t}=\dot{q}_{i}=\frac{\partial H(\vec{p}, \vec{q})}{\partial p_{i}}, \quad \dot{p}_{i}=-\frac{\partial H(\vec{p}, \vec{q})}{\partial q_{i}}
+$$
+
+One then derives
+$$
+\frac{\mathrm{d} H(\vec{p}, \vec{q})}{\mathrm{d} t}=\dot{H}=\frac{\partial H}{\partial q_{i}} \dot{q}_{i}+\frac{\partial H}{\partial p_{i}} \dot{p}_{i}=\dot{p}_{i} \dot{q}_{i}-\dot{q}_{i} \dot{p}_{i}=0
+$$
+This looks so easy in the continuous case that it may seem surprising that this principle is hard to generalize to the discrete systems. Yet formally it should be easy to derive some energy-conserving evolution law:
+Take a lattice of integers $P_{i}$ and $Q_{i},$ and some bounded, integer energy function $H(\vec{P}, \vec{Q}) .$ Consider some number $E$ for the total energy. Consider all points of the surface $\Sigma_{E}$ on our lattice defined by $H(\vec{P}, \vec{Q})=E .$ The number of points on such a surface could be infinite, but let us take the case that it is $\mathrm{fi}$ nite. Then simply consider a path $P_{i}(t), Q_{i}(t)$ on $\Sigma_{E},$ where $t$ enumerates the integers. The path must eventually close onto itself. This way we get a closed path on $\Sigma_{E} .$ If there are points on our surface that are not yet on the closed path that we just constructed, then we repeat the procedure starting with one of those points. Repeat until $\Sigma_{E}$ is completely covered by closed paths. These closed paths then define our evolution law.
+At first sight, however, generalizing the standard Hamiltonian procedure now seems to fail. Whereas the standard Hamiltonian formalism (19.8) for the continuous case involves just infinitesimal time steps and infinitesimal changes in coordinates and momenta, we now need finite time steps and finite changes. One could think of making finite-size corrections in the lattice equations, but that will not automatically work, since odds are that, after some given time step, integer-valued points in the
+surface $\sum_E$ may be difficult to find. Now with a little more patience, a systematic
+approach can be formulated, but we postpone it to Sect. 19.4.
+
+
+\subsubsection{Multi-dimensional Harmonic Oscillator}\label{ch19.3.1}
+
+A superior procedure will be discussed in the next subsections, but first let us consider the simpler case of the multi-dimensional harmonic oscillator of Sect. 17.2 , Sect. 17.2 .2: take two symmetric integer-valued tensors $T_{i j}=T_{j i},$ and $V_{i j}=V_{j i}$ The evolution law alternates between integer and half-odd integer values of the time variable $t .$ See Eqs. ( 17.77) and ( 17.78):
+$$
+\begin{aligned}
+Q_{i}(t+1) &=Q_{i}(t)+T_{i j} P_{j}\left(t+\frac{1}{2}\right) \\
+P_{i}\left(t+\frac{1}{2}\right) &=P_{i}\left(t-\frac{1}{2}\right)-V_{i j} Q_{j}(t)
+\end{aligned}
+$$
+According to Eqs. $(17.84),(17.85),(17.88)$ and $(17.89),$ the conserved classical Hamiltonian is
+$$
+\begin{array}{l}
+{H=\frac{1}{2} T_{i j} P_{i}\left(t+\frac{1}{2}\right) P_{j}\left(t-\frac{1}{2}\right)+\frac{1}{2} V_{i j} Q_{i}(t) Q_{j}(t)} \\
+{=\frac{1}{2} T_{i j} P_{i}\left(t+\frac{1}{2}\right) P_{j}\left(t+\frac{1}{2}\right)+\frac{1}{2} V_{i j} Q_{i}(t) Q_{j}(t+1)} \\
+{=\frac{1}{2} \vec{P}^{+} T \vec{P}^{+}+\frac{1}{2} \vec{P}^{+} T V \vec{Q}+\frac{1}{2} \vec{Q} V \vec{Q}} \\
+{=\frac{1}{2}\left(\vec{P}^{+}+\frac{1}{2} \vec{Q} V\right) T\left(\vec{P}^{+}+\frac{1}{2} V \vec{Q}\right)+\vec{Q}\left(\frac{1}{2} V-\frac{1}{8} V T V\right) \vec{Q}} \\
+{=\vec{P}^{+}\left(\frac{1}{2} T-\frac{1}{8} T V T\right) \vec{P}^{+}+\frac{1}{2}\left(\vec{Q}+\frac{1}{2} \vec{P}^{+} T\right) V\left(\vec{Q}+\frac{1}{2} T \vec{P}^{+}\right)}
+\end{array}
+$$
+
+where in the last three expressions, $\vec{Q}=\vec{Q}(t)$ and $\vec{P}^{+}=\vec{P}\left(t+\frac{1}{2}\right) .$ Equations ( 19.11) follow from the evolution equations ( 19.9) and ( 19.10) provided that
+$T$ and $V$ are symmetric. One reads off that this Hamiltonian is time-independent. It is bounded from below if not only $V$ and $T$ but also either $V-\frac{1}{4} V T V$ or $T-\frac{1}{4} T V T$ are bounded from below (usually, one implies the other).
+
+Unfortunately, this requirement is very stringent; the only solution where this energy is properly bounded is a linear or periodic chain of coupled oscillators, as in our one-dimensional model of massless bosons. On top of that, this formalism only allows for strictly harmonic forces, which means that, unlike the continuum case, no non-linear interactions can be accommodated for. A much larger class of models will be exhibited in the next section.
+
+Returning first to our model of massless bosons in $1+1$ dimensions, Sect. $17,$ we note that the classical evolution operator was defined over time steps $\delta t=1,$ and this means that, knowing the evolution operator specifies the Hamiltonian eigenvalue up to multiples of $2 \pi .$ This is exactly the range of a single creation or annihilation operator $a^{L, R}$ and $a^{L, R^{\dagger}} .$ But these operators can act many times, and therefore the total energy should be allowed to stretch much further. This is where we need the
+
+exactly conserved discrete energy function (19.11). The fractional part of H, which
+we could call $E^{quant}$, follows uniquely from the evolution operator $U(\delta t)$. Then we
+can add multiples of $2\pi$ times the energy (19.11) at will. This is how the entire
+range of energy values of our 2 dimensional boson model results from our mapping.
+It cannot be a coincidence that the angular energy function $E^{quant}$ t together with the
+conserved integer valued energy function Eclass taken together exactly represent the
+spectrum of real energy values for the quantum theory. This is how our mappings
+work.
+
+
+
+
+\subsection{More General, Integer-Valued Hamiltonian Models with Interactions}\label{ch19.4}
+
+According to the previous section, we recuperate quantum models with a continuous time variable from a discrete classical system if not only the evolution operator over a time step $\delta t$ is time-reversible, but in addition a conserved discrete energy beable $E^{\text {class exists, taking values } 2 \pi N / \delta t \text { where } N \text { is integer. Again, let us take } \delta t=1 . \text { If }}$ the eigenvalues of $U^{\mathrm{op}}(\delta t)$ are called $e^{-i E^{\mathrm{qualt}}},$ with $0 \leq E^{\mathrm{quant}}<2 \pi$ then we can define the complete Hamiltonian $H$ to be
+
+$$
+H=E^{\mathrm{quant}}+E^{\mathrm{class}}=2 \pi(v+N)
+$$
+
+where $0 \leq v<1 \text { (or alternatively, }-1 / 2<v \leq 1 / 2)$ and $N$ is integer. The quantity conjugated to that is a continuous time variable. If we furthermore demand that $E^{\text {class is bounded from below then Eq. }(19.12) \text { defines a genuine quantum system }}$ with a conserved Hamiltonian that is bounded from below.
+
+As stated earlier, it appears to be difficult to construct explicit, non-trivial examples of such models. If we try to continue along the line of harmonic oscillators, perhaps with some non-harmonic forces added, it seems that the standard Hamiltonian formalism fails when the time steps are finite, and if we find a Hamiltonian that is conserved, it is usually not bounded from below. Such models then are unstable; they will not lead to a quantum description of a model that is stable.
+
+In this section, we shall show how to cure this situation, in principle. We concentrate on the construction of a Hamiltonian principle that keeps a classical energy function $E^{\text {class }}$ exactly conserved in time.
+
+In the multidimensional models, we had adopted the principle that we in turn update all variables $Q_{i},$ then all $P_{i}$. That has to be done differently. To obtain better models, let us phrase our assignment as follows:
+
+Formulate a discrete, classical time evolution law for some model with the following properties:
+
+The time evolution operation must be a law that is reversible in time.' Only then will we have an operator $U(\delta t)$ that is unitary and as such can be re-written as the exponent of $-i$ times a Hermitian Hamiltonian.
+
+ii There must exist a discrete function $E^{\text {class }}$ depending on the dynamical variables of the theory, that is exactly conserved in time.
+iii This quantity $E^{\text {class }}$ must be bounded from below.
+When these first three requirements are met we will be able to map this system on a quantum mechanical model that may be physically acceptable. But we want more:
+iv Our model should be sufficiently generic, that is, we wish that it features interactions.
+v Ideally, it should be possible to identify variables such as our $P_{i}$ and $Q_{i}$ so that we can compare our model with systems that are known in physics, where we have the familiar Hamiltonian canonical variables $\vec{p}$ and $\vec{q} .$
+vi We would like to have some form of locality; as in the continuum system, our Hamiltonian should be described as the integral (or sum) of a local Hamiltonian density, $\mathcal{H}(\vec{x}),$ and there should exist a small parameter $\varepsilon>0$ such that at fixed time $t, \mathcal{H}(\vec{x})$ only depends on variables located at $\vec{x}^{\prime}$ with $\left|\vec{x}^{\prime}-\vec{x}\right|<\varepsilon$
+
+The last condition turns our system in some discretized version of a field theory $(\vec{P} \text { and } \vec{Q} \text { are then fields depending on a space coordinate } \vec{x} \text { and of course on time } t$ ). One might think that it would be hopeless to fulfill all these requirements. Yet there exist beautiful solutions which we now construct. Let us show how our reasoning goes. since we desire an integer-valued energy function that looks like the Hamiltonian of a continuum theory, we start with a Hamiltonian that we like, being a continuous function $H_{\text {cont }}(\vec{q}, \vec{p})$ and take its integer part, when also $\vec{p}$ and $\vec{q}$ are integer. More precisely (with the appropriate factors $2 \pi,$ as in Eqs. ( 16.6) and ( 18.22) in previous chapters): take $P_{i}$ and $Q_{i}$ integer and write $^{4}$
+$$
+\begin{array}{l}
+{E^{\text {class }}(\vec{Q}, \vec{P})=2 \pi H^{\text {class }}(\vec{Q}, \vec{P})} \\
+{H^{\text {class }}(\vec{Q}, \vec{P})=\operatorname{int}\left(\frac{1}{2 \pi} H_{\text {cont }}(\vec{Q}, 2 \pi \vec{P})\right)}
+\end{array}
+$$
+where 'int' stands for the integer part, and
+$$
+Q_{i}=\operatorname{int}\left(q_{i}\right), \quad P_{i}=\operatorname{int}\left(p_{i} / 2 \pi\right), \quad \text { for all } i
+$$
+This gives us a discrete, classical "Hamiltonian function' of the integer degrees of freedom $P_{i}$ and $Q_{i} .$ The index $i$ may take a finite or an infinite number of values
+(i is finite if we discuss a finite number of particles, infinite if we consider some version of a field theory).
+
+Soon, we shall discover that not all classical models are suitable for our construction: first of all: the oscillatory solutions must oscillate sufficiently slowly to stay visible in our discrete time variable, but, as we shall see, our restrictions will be somewhat more severe than this.
+
+It will be easy to choose a Hamiltonian obeying these (mild) constraints, but what are the Hamilton equations? Since we wish to consider discrete time steps $(\delta t=1)$ the equations have to be rephrased with some care. As is the case in the standard Hamiltonian formalism, the primary objective that our equations of motion have to satisfy is that the function $H(\vec{Q}, \vec{P})=E^{\text {class }}$ must be conserved. Unlike the standard formalism, however, the changes in the values $\bar{Q}$ and $\vec{P}$ at the smallest possible time steps cannot be kept infinitesimal because both time $t$ and the variables $\vec{Q}$ and $\vec{P}$ contain integer numbers only.
+
+The evolution equations will take the shape of a computer program. At integer time steps with intervals $\delta t,$ the evolution law will "update" the values of the integer variables $Q_{i}$ and $P_{i} .$ Henceforth, we shall use the word "update" in this sense. The entire program for the updating procedure is our evolution law.
+
+As stated at the beginning of this section, it should be easy to establish such a program: compute the total energy $E$ of the initial state, $H(\vec{Q}(0), \vec{P}(0))=E$ Subsequently, search for all other values of $(\vec{Q}, \vec{P})$ for which the total energy is the same number. Together, they form a subspace $\Sigma_{E}$ of the $\vec{Q}, \vec{P}$ lattice, which in general may look like a surface. Just consider the set of points in $\Sigma_{E},$ make a mapping $(\vec{Q}, \vec{P}) \mapsto\left(\vec{Q}^{\prime}, \vec{P}^{\prime}\right)$ that is one-to-one, inside $\Sigma_{E} .$ This law will be timereversible and it will conserve the energy. Just one problem then remains: how do we choose a unique one-to-one mapping?
+
+To achieve this, we need a strategy. Our strategy now will be that we order the values of the index $i$ in some given way (actually, we will only need a cyclic ordering), and update the $(Q, P)$ pairs sequentially: first the pair $\left(Q_{1}, P_{1}\right),$ then the pair $\left(Q_{2}, P_{2}\right),$ and so on, until we arrive at the last value of the index. This sequence of updating every pair $\left(Q_{i}, P_{i}\right)$ exactly once will be called a cycle. One cycle will define the smallest step $U^{\mathrm{op}}(t, t+\delta t)$ for the evolution law.
+
+This reduces our problem to that of updating a single $Q, P$ pair, such that the energy is conserved. This should be doable. Therefore, let us first consider a single $Q, P$ pair.
+
+
+
+
+\subsubsection{One-Dimensional System: A Single Q,P Pair}\label{ch19.4.1}
+
+While concentrating on a single pair, we can drop the index $i .$ The Hamiltonian will be a function of two integers, $Q$ and $P .$ For demonstration purposes, we restrict ourselves to the case
+$$
+H(Q, P)=T(P)+V(Q)+A(Q) B(P)
+$$
+which can be handled for fairly generic choices for the functions $T(P), V(Q), A(Q)$ and $B(P) .$ The last term here, the product $A B,$ is the lattice generalization of the magnetic term $\vec{p} \cdot \vec{A}(\vec{q})$ in Eq. $(19.6) .$ Many interesting physical systems, such as most many body systems, will be covered by Eq. $(19.15) .$ It is possible to choose $T(P)=P^{2},$ or better: $\frac{1}{2} P(P-1),$ but $V(Q)$ must be chosen to vary more slowly
+
+with $Q,$ otherwise the system might tend to oscillate too quickly (remember that time is discrete). Often, for sake of simplicity, we shall disregard the $A B$ term. The variables $Q$ and $P$ form a two-dimensional lattice. Given the energy $E$ the points on this lattice where the energy $H(Q, P)=E$ form a subspace $\Sigma_{E} .$ We need to define a one-to-one mapping of $\Sigma_{E}$ onto itself. However, since we have just a two-dimensional lattice of points $(Q, P),$ we encounter a risk: if the integer $H$ tends to be too large, it will often happen that there are no other values of $Q$ and $P$ at all that have the same energy. Then, our system cannot evolve. So, we will find out that some choices of the function $H$ are better than others. In fact, it is not so difficult to see under what conditions this problem will occur, and how we can avoid it: the integer-valued Hamiltonian should not vary too wildly with $Q$ and $P .$ What does "too wildly" mean? If, on a small subset of lattice points, a $(Q, P)$ pair does not move, this may not be so terrible: when embedded in a larger system, it will move again after the other values changed. But if there are too many values for the initial conditions where the system will remain static, we will run into difficulties that we wish to avoid. Thus, we demand that most of the surfaces $\Sigma_{E}$ contain more than one point on them - preferably more than two. This means that the functions
+$V(Q), T(P), A(Q)$ and $B(P)$ should not be allowed to be too steep. We then find the desired invertible mapping as follows. First, extrapolate the functions $T, P, A$ and $B$ to all real values of their variables. Write real numbers $q$ and $p$ as
+
+$q=Q+\alpha, \quad p=P+\beta, \quad Q$ and $P$ integer, $\quad 0 \leq \alpha \leq 1, \quad 0 \leq \beta \leq 1$
+Then define the continuous functions
+$$
+\begin{array}{l}
+{V(q)=(1-\alpha) V(Q)+\alpha V(Q+1)} \\
+{T(p)=(1-\beta) T(P)+\beta T(P+1)}
+\end{array}
+$$
+and similarly $A(q)$ and $B(p) .$ Now, the spaces $\Sigma_{E}$ are given by the lines $H(q, p)=$ $T(p)+V(q)+A(q) B(p)=E,$ which are now sets of oriented, closed contours, see Fig. $19.1 .$ They are of course the same closed contours as in the standard, continuum Hamiltonian formalism.
+
+The standard Hamiltonian formalism would now dictate how fast our system runs along one of these contours. We cannot quite follow that prescription here, because at $t=$ integer we wish $P$ and $Q$ to take integer values, that is, they have to be at one of the lattice sites. But the speed of the evolution does not affect the fact that energy is conserved. Therefore we modify this speed, by now postulating that
+at every time step $t \rightarrow t+\delta t,$ the system moves to the next lattice site that is
+on its contour $\Sigma_{E}$
+If there is only one point on the contour, which would be the state at time $t$, then nothing moves. If there are two points, the system flip-flops, and the orientation of the contour is immaterial. If there are more than two points, the system is postulated to move in the same direction along the contour as in the standard Hamiltonian formalism. In Fig. $19.1,$ we see examples of contours with just one point, and contours with two or more points on them. Only if there is more than one point, the evolution
+will be non-trivial.
+
+In some cases, there will be some ambiguity. Precisely at the lattice sites, our
+curves will be non-differentiable because the functions T,C,A, and B are nondifferentiable
+there. This gives some slight complications in particular when we
+reach extreme values for both T (p) and V (q). If both reach a maximum or both a
+minimum, the contour shrinks to a point and the system cannot move. If one reaches
+a minimum and the other a maximum, we have a saddle point, and some extra rules
+must be added. We could demand that the contours “have to be followed to the
+right”, but we also have to state which of the two contours will have to be followed
+if we land on such a point; also, regarding time reversal, we have to state which of
+the two contours has the lattice point on it, and which just passes by. Thus, we can
+make the evolution law unique and reversible. See Fig. 19.1. The fact that there are
+a few (but not too many) stationary points is not problematic if this description is
+applied to formulate the law for multi-dimensional systems, see Sect. 19.4.2.
+Clearly, this gives us the classical orbit in the correct temporal order, but the
+reader might be concerned about two things: one, what if there is only one point on our contour, the point where we started from, and two, we have the right time
+ordering, but do we have the correct speed? Does this updating procedure not go too
+fast or too slowly, when compared to the continuum limit?
+As for the first question, we will have no choice but postulating that, if there is
+only one point on a contour, that point will be at rest, our system does not evolve.
+Later, we shall find estimates on how many of such points one might expect.
+Let us first concentrate on the second question. How fast will this updating procedure
+go? how long will it take, on average, to circle one contour? Well, clearly,
+the discrete period T of a contour will be equal to the number of points on a contour
+(with the exception of a single point, where things do not move5). How many points
+do we expect to find on one contour?
+
+Consider now a small region on the $(Q, P)$ lattice, where the Hamiltonian $H^{\text {class }}$ approximately linearizes:
+$$
+H^{\mathrm{class}} \approx a P+b Q+C
+$$
+with small corrections that ensure that $H^{\text {class }}$ is an integer on all lattice points. With a little bit of geometry, one finds a tilted square with sides of length $\varepsilon \sqrt{a^{2}+b^{2}}$ where the values of $H^{\text {class }}$ vary between values $C$ and $C+K,$ with $K=\varepsilon\left(a^{2}+\right.$ $b^{2}$ ). Assuming that all these integers occur at about the same rate, we find that the total number of lattice sites inside the square is $\varepsilon^{2}\left(a^{2}+b^{2}\right),$ and since there are $K$ contours, every contour has, on average,
+$$
+\varepsilon^{2}\left(a^{2}+b^{2}\right) / K=\varepsilon
+$$
+points on it. The lengths of the contours in Fig. 19.2 is $\varepsilon \sqrt{a^{2}+b^{2}},$ so that, on average, the distance between two points on a contour is $\sqrt{a^{2}+b^{2}}$
+
+This little calculation shows that, in the continuum limit, the propagation speed of our updating procedure will be
+$$
+\sqrt{\left(\frac{\delta q}{\delta t}\right)^{2}+\left(\frac{\delta p}{\delta t}\right)^{2}}=\sqrt{\left(\frac{\partial H}{\partial p}\right)^{2}+\left(\frac{\partial H}{\partial q}\right)^{2}}
+$$
+$(19.2$
+
+completely in accordance with the standard Hamilton equations! (Note that the factors
+2π in Eqs. (19.13) and (19.14) cancel out)
+A deeper mathematical reason why our discrete lattice Hamiltonian formalism
+generates the same evolution speed as the continuum theory may be traced to the
+Liouville theorem: a co-moving infinitesimal volume element in (p, q)-space stays
+constant in the continuum theory; in the discrete lattice case, time reversibility ensures
+that the number of lattice points inside a small volume on the lattice stays fixed,
+so that we have the same Liouville theorem on the lattice. When increasing values
+for the partial derivatives of the Hamiltonian cause a squeezing of the infinitesimal
+volume elements, both the continuum theory and the lattice theory require the same
+increase in the velocities to keep the volume elements constant.
+One concludes that our updating procedure exactly leads to the correct continuum
+limit. However, the Hamiltonian must be sufficiently smooth so as to have more
+than one point on a contour. We now know that this must mean that the continuous
+motion in the continuum limit cannot be allowed to be too rapid. We expect that, on
+the discrete lattice, the distance between consecutive lattice points on a contour may
+vary erratically, so that the motion will continue with a variable speed. In the continuum
+limit, this must average out to a smooth motion, completely in accordance
+with the standard Hamilton equations.
+Returning to the question of the contours with only one point on them, we expect
+their total lengths, on average, to be such that their classical periods would
+correspond to a single time unit δt . These periods will be too fast to monitor on our
+discrete time scale.
+This completes our brief analysis of the 1+1 dimensional case.We found an evolution
+law that exactly preserves the discrete energy function chosen. The procedure
+is unique as soon as the energy function can be extended naturally to a continuous
+function between the lattice sites, as was realized in the case H = T + V + AB in
+Eq. (19.17). Furthermore we must require that the energy function does not vary too
+steeply, so that most of the closed contours contain more than one lattice point.
+An interesting test case is the choice
+
+
+(19.21)
+
+This is a discretized harmonic oscillator whose period is not exactly constant, but
+this one is easier to generalize to higher dimensions than the oscillator described in
+Sect. 17.2 and Sect. 19.3.1.
+
+
+
+
+\subsubsection{The Multi-dimensional Case}\label{ch19.4.2}
+
+A single particle in 1 space- and 1 time dimension, as described in the previous
+section, is rather boring, since the motion occurs on contours that all have rather
+short periods (indeed, in the harmonic oscillator, where both T and V are quadratic
+functions of their variables, such as in Eq. (19.21), the period will stay close to
+the fundamental time step δt itself). In higher dimensions (and in multi component oscillators, particularly when they have non-linear interactions, this will be quite different. So now, we consider the variables $Q_{i}, P_{i}, i=1, \ldots, n .$ Again, we postulate a Hamiltonian $H(\vec{Q}, \vec{P})$ that, when $P_{i}$ and $Q_{i}$ are integer, takes integer values only. Again, let us take the case that
+$$
+H(\vec{Q}, \vec{P})=T(\vec{P})+V(\vec{Q})+A(\vec{Q}) B(\vec{P})
+$$
+To describe an energy conserving evolution law, we simply can apply the procedure described in the previous section $n$ times for each cycle. For a unique description, it is now mandatory that we introduce a cyclic ordering for the values $1, \ldots, n$ that the index $i$ can take. Naturally, we adopt the notation of the values for the index $i$ to whatever ordering might have been chosen:
+$$
+1<2<\cdots<n<1 \ldots
+$$
+We do emphasize that the procedure described next depends on this ordering. Let $U_{i}^{\text {op }}$ be our notation for the operation in one dimension, acting on the variables $Q_{i}, P_{i}$ at one given value for the index $i .$ Thus, $U_{i}^{\text {op }}$ maps $\left(P_{i}, Q_{i}\right) \mapsto\left(P_{i}^{\prime}, Q_{i}^{\prime}\right)$ using the procedure of Sect. 19.4 .1 with the Hamiltonian $(19.22),$ simply keeping all other variables $Q_{j}, P_{j}, j \neq i$ fixed. By construction, $U_{i}^{\mathrm{op}}$ has an inverse $U_{i}^{\mathrm{op}-1}$ Now, it is simple to produce a prescription for the evolution $U^{\mathrm{op}}$ for the entire system, for a single time step $\delta t=1$ :
+$$
+U^{\mathrm{op}}(\delta t)=U_{n}^{\mathrm{op}} U_{n-1}^{\mathrm{op}} \ldots U_{1}^{\mathrm{op}}
+$$
+
+where we intend to use the physical notation: $U_{1}^{\mathrm{op}}$ acts first, then $U_{2}^{\mathrm{op}},$ etc. although the opposite order can also be taken. Note, that we have some parity violation: the operators $U_{i}^{\text {op }}$ and $U_{j}^{\text {op }}$ will not commute if $i \neq j,$ and therefore, if $n \geq 3,$ the resulting operator $U^{\mathrm{op}}$ is not quite the same as the one obtained when the order is reversed. Time inversion gives:
+$$
+U^{\mathrm{op}}(-\delta t)=U^{\mathrm{op}-1}(\delta t)=U_{1}^{\mathrm{op}-1} U_{2}^{\mathrm{op}-1} \cdots U_{n}^{\mathrm{op}-1}
+$$
+Finally, if the exchange $U_{i}^{\mathrm{op}} \leftrightarrow U_{i}^{\mathrm{op}-1}$ might be associated with "particle-antiparticle conjugation", $C,$ then the product $P$ (parity) $T$ (time inversion) $C$ (conjugation) may still be a good symmetry. In the real world, this might lead to a natural explanation of CPT symmetry, while $P, T,$ or $C P$ are not respected.
+
+
+\subsubsection{The Lagrangian}\label{ch19.4.3}
+
+It was emphasized by Elze [ 34] that systems with a discrete Hamiltonian should also have an action principle. If both time as well as the variables $P$ and $Q$ are discrete, one could consider Lagrangians such as
+$$
+L(t) \stackrel{?}{=} \frac{1}{2} P(t)(Q(t+1)-Q(t-1))-H(P(t), Q(t))
+$$
+$$
+S=\sum_{t \in \mathbb{Z}} L(t)
+$$
+( 19.26)
+
+This, however, would lead to Lagrange equations that are finite difference equations,
+at best, while they would no longer guarantee conservation of energy. Some
+Lagrangians may exist that are purely quadratic in the integers P and Q, but, as we
+saw, this would be too strong a restriction that excludes any non-trivial theory. At
+this moment we have no proposal for a Lagrange principle that works as well as our
+discrete Hamilton formalism.
+
+
+\subsubsection{Discrete Field Theories}\label{ch19.4.4}
+
+An important example of an infinite-dimensional $\left(Q_{i}, P_{i}\right)$ system is a local field theory. Suppose that the index $i$ is replaced by a lattice coordinate $\vec{x},$ plus possibly other indices $j$ labelling species of fields. Let us rename the variables $\left(\Phi_{j}(\vec{x}), P_{j}(\vec{x})\right)$ where $\Phi_{j}$ are canonical fields and $P_{j}$ are their momentum variables (often, in the continuum theory, $\frac{d}{d t} \Phi_{j}$ ). Now assume that the Hamiltonian of the entire system is the sum of local terms:
+$$
+H_{\mathrm{int}}=\sum_{\vec{x}} \mathcal{H}_{\mathrm{int}}(\vec{x}), \quad \mathcal{H}_{\mathrm{int}}(\vec{x})=V\left(\vec{\Phi}(\vec{x}), \vec{\Phi}\left(\vec{x}^{\prime}\right)\right)+T(\vec{P}(\vec{x}))
+$$
+where the coordinates $\vec{x}^{\prime}$ are limited to neighbours of $\vec{x}$ only, and all functions $V$ and $T$ are integers. This would be a typical discretization of a (classical or quantum) field theory (ignoring, for simplicity, magnetic terms).
+
+We can apply our multi-dimensional, discrete Hamiltonian equations to this case, but there is one important thing to remember: where in the previous subsections we stated that the indices $i$ must be cyclically ordered, this now means that, in the field theory of Eq. $(19.27),$ not only the indices $i$ but also the coordinates $\vec{x}$ must be (cyclically) ordered. The danger of this is that the functions $V_{i}(\vec{x})$ also refer to neighbours, and, consequently, the evolution step defined at point $\vec{x}$ affects the evolution at its neighbouring points $\vec{x}^{\prime},$ or: $\left[U^{\mathrm{op}}(\vec{x}), U^{\mathrm{op}}\left(\vec{x}^{\prime}\right)\right] \neq 0 .$ Performing the updates in the order of the values of the coordinates $\vec{x},$ might therefore produce signals that move much faster than light, possibly generating instantaneous non local effects across the entire system over a single time step $t \rightarrow t+\delta t .$ This we need to avoid, and there happens to be an easy way to do this:
+First make sure that the interaction terms in the Hamiltonian only involve nearest neighbours, The evolution equations (e.o.m.) of the entire system over one time step $\delta t,$ are then obtained by ordering the coordinates and other indices as follows: first update all even lattice sites, then update all odd lattice sites.
+since the $U^{\text {op }}$ operators generated by $H_{i}(\vec{x})$ do commute with the evolution operators $U^{\mathrm{op}}\left(\vec{x}^{\prime}\right)$ when $\vec{x}$ and $\vec{x}^{\prime}$ are both on an even site or both on an odd site of the lattice (so that they are not nearest neighbours), this ordering does not pass on signals beyond two lattice links. Moreover, there is another huge advantage of this law: the order in which the individual even sites of the lattice are updated is now immaterial, and the same for the set of all odd sites. Thus, we obtained a cellular automaton whose evolution law is of the type
+$$
+U^{\mathrm{op}}=A^{\mathrm{op}} B^{\mathrm{op}}, \quad A^{\mathrm{op}}=\prod_{\vec{x}=\mathrm{even}} A^{\mathrm{op}}(\vec{x}), \quad B^{\mathrm{op}}=\prod_{\vec{y}=\mathrm{odd}} B^{\mathrm{op}}(\vec{y})
+$$
+where the order inside the products over the sites $\vec{x}$ and $\vec{y}$ is immaterial, except that $A^{\mathrm{op}}(\vec{x})$ and $B^{\mathrm{op}}(\vec{y})$ do not commute when $\vec{x}$ and $\vec{y}$ are direct neighbours. Such automata are interesting objects to be studied, see Chap. 21
+
+
+\subsubsection{From the Integer Valued to the Quantum Hamiltonian}\label{ch19.4.5}
+
+A deterministic system obeying a discrete Hamiltonian formalism as described in the previous sections is of particular interest when we map it onto a quantum system following the program discussed in this book. This is because we here have two different operators that both play the role of energy: we have the integer valued, discrete Hamiltonian $H_{\text {class }}$ that generates the classical equations of motion, and we have the angular, or fractional valued Hamiltonian $H_{\text {quant }},$ defined from the eigenstates and eigenvalues of the one-time step evolution operator $U^{\mathrm{op}}(\delta t):$
+$$
+U^{\mathrm{op}}(\delta t)=e^{-i H_{\mathrm{quant}}}, \quad 0 \leq H_{\mathrm{quant}}<2 \pi \quad(\delta t=1)
+$$
+where $H_{\text {quant }}$ refers to the eigenvalues of the operator $H_{\text {quant }}^{\text {op }}$ As anticipated in Sect. $19.4,$ we can now uniquely define a total Hamiltonian that is a real number operator, by
+$$
+H=H_{\mathrm{class}}+H_{\mathrm{quant}}^{\mathrm{op}}
+$$
+The bounds imposed in Eq. ( 19.29) are important to keep in mind, since $H_{\mathrm{quant}}$ as defined, is strictly periodic. $H_{\text {class is assumed to take only integer values, times }}$ $2 \pi / \delta t .$ In this section we study the quantum theory defined by the Hamiltonian ( 19.30)
+We have seen, for instance in Chap. $2,$ Sect. $2.2 .1,$ Eq. ( 2.26) in Part I, and in Chap. $12,$ Sect. $12.2,$ Eq. ( 12.10) in Part II, how the operator $H_{\text {quant }}^{\text {op }}$ can be calculated from the eigenvalues $U(\delta t)$ of the operator $U^{\mathrm{op}}(\delta t):$ for instance by Fourier transformations, one derives that, if the eigenvalues of $H_{\mathrm{quant}}$ are assumed to lie between 0 and $2 \pi$, then
+$$
+H_{\mathrm{quant}}^{\mathrm{op}}=\pi-\sum_{n-1}^{\infty} \frac{i}{n}\left(U^{\mathrm{op}}(n \delta t)-U^{\mathrm{op}}(-n \delta t)\right)
+$$
+This sum converges nearly everywhere, but the vacuum is the edge state where the equation does not hold, and it is not quite local, since the evolution operator over $n$ steps in time, also acts over $n$ steps in space.
+
+But both $H_{\text {class and }} H_{\text {quant }}$ are uniquely defined, and since $H_{\text {quant }}$ is bound to an interval while $H_{\text {class is bounded from below, also } H \text { is bounded from below. }}$
+
+Note that demanding a large number of low energy states near the vacuum (the absence of a large mass gap) implies that $U^{\mathrm{op}}(n \delta t)$ be non-trivial in the $H_{\mathrm{class}}=0$ sector. This is often not the case in the models described in Sect. $19.4 .2,$ but in principle there is no reason why such models should not exist also. In fact, some of the cellular automaton models discussed later in Chap. 21 have no manifestly conserved $H_{\text {class }},$ so that all their states can be regarded as sitting in the $H_{\text {class }}=0$ sector of the theory.
+
+Because of the non-locality of Eq. $(19.31),$ the Hamiltonian ( 19.31) does not obey the rule vi, see page $233,$ but if $U^{\mathrm{op}}(\delta t)$ is the product of local evolution operators, the evolution over integer time steps $n \delta t$ is local, so the theory can be claimed to obey locality, as long as we refrain from defining its states at time $t$ when $t$ is not an integer.
+
+As we have seen in Sect. 14 , the sum ( 19.31) does not converge rapidly everywhere in Hilbert space. We are particularly interested in the Hamiltonian as it acts on states very close to the vacuum, in our notation: $H_{\text {class }}=0, H_{\text {quant }}=\omega,$ where $0<\omega \ll 2 \pi . \text { Suppose then that we introduce a cut-off in the sum }(19.31) \text { (or } 12.8)$
+by multiplying the summand with $e^{-n / R},$ where $R$ is also the range of non-locality of the last significant terms of the sum. As we have seen in Sect. $14,$ breaking off the expansion at the point $R$ modifies the Hamiltonian as follows:
+
+$$
+H_{\mathrm{quant}} \rightarrow H_{\mathrm{quant}}+\frac{2}{R H_{\mathrm{quant}}}
+$$
+and this is only acceptable if
+$$
+R \gg M_{\mathrm{Pl}} /\left\langle H_{\mathrm{quant}}\right\rangle^{2}
+$$
+Here, $M_{\mathrm{Pl}}$ is the "Planck mass", or whatever the inverse is of the elementary time scale in the model. This cut-off radius $R$ must therefore be chosen to be very large, so that, indeed, the exact quantum description of our local model generates nonlocality in the Hamiltonian.
+
+We conclude that the Hamiltonian can be expressed in terms of local terms, but we need to include the operators $U^{\mathrm{op}}(\pm \Delta t)$ where $\Delta t$ is large compared to the inverse of the Hamiltonian we wish to calculate. These will develop non localities that are still serious. This is still an obstacle against the construction of a local quantum Hamiltonian density (the classical component, $H^{\text {class }}$ obeys condition vi).
+As yet, therefore, more has to be done to obtain locality: second quantization. The apparent locality clash between the quantum Hamiltonian and the classical theory may well be looked upon as a possible additional explanation of the apparent non-localities expected in "hidden variable' theories: neither the pure quantum system that we usually employ in quantum field theories, nor the associated classical system exhibit any non-locality, but the mapping between them does. This non-locality is spurious, it has no physical consequence whatsoever, but mathematically it may imply that the quantum system should not be split up into local
+wave functions that do not communicate with each other—perhaps that is the route
+along which apparent non-locality arises in classical mechanical models. There is
+no non-locality in the classical theory, but it is in the representation of the quantum
+variables, or: the classical-quantum mapping.
+
+
+
+
+\begin{equation}\label{19.}
+	
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+\end{document}
+

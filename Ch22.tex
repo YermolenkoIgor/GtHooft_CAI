@@ -1,0 +1,186 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+
+
+\begin{equation}\label{22.}
+	
+\end{equation}
+
+
+\section{The Problem of Quantum Locality}\label{ch22}
+
+When we have a classical cellular automaton, the condition of locality is easy to formulate and to impose. All one needs to require is that the contents of the cells are being updated at the beat of a clock: once every unit of time, $\delta t .$ If we assume the updates to take place in such a way that every cell is only affected by the contents of its direct neighbours, then it will be clear that signals can only be passed on with a limited velocity, $c,$ usually obeying
+$$
+|c| \leq|\delta x / \delta t|
+$$
+where $|\delta x|$ is the distance between neighbouring cells. One could argue that this is a desirable property, which at some point might be tied in with special relativity, a theory that also demands that no signals go faster than a limiting speed $c$
+
+The notion of locality in quantum physics is a bit more subtle, but in quantum field theories one can also demand that no signals go faster than a limiting speed $c$ If a signal from a space-time point $x^{(1)}$ can reach an other space-time point $x^{(2)}$ we say that $x^{(2)}$ lies in the forward light cone of $x^{(1)} .$ If $x^{(2)}$ can send a signal to
+$x^{(1)},$ then $x^{(2)}$ is in the backward light cone of $x^{(1)} ;$ if neither $x^{(1)}$ can affect $x^{(2)}$ nor $x^{(2)}$ can affect $x^{(1)},$ we say that $x^{(1)}$ and $x^{(2)}$ are space-like separated.
+
+The way to implement this in quantum field theories is by constructing a Hamiltonian in such a way that, for space-like separated space-time points, all quantum operators defined at $x^{(1)}$ commute with all operators defined at $x^{(2)} .$ The quantum field theories used to describe the Standard Model obey this constraint. We explained in Sect. 20.7 that then, performing any operation at $x^{(1)}$ and any measurement at $x^{(2)}$ give the same result regardless the order of these two operations, and this means that no signal can be transferred.
+
+However, the existence of light cones, due to a fixed light velocity $c,$ would not have been easy to deduce from the Hamiltonian unless the theory happens to obey the restrictions of special relativity. If the model is self-consistent in different inertial frames, and space-like operators commute at equal times, then relativity theory tells us they must commute everywhere outside the light cone. Now, most of our cellular automaton models fail to obey special relativity-not because we might doubt on the validity of the theory of special relativity, but because relativistically invariant cellular automaton models are extremely difficult to construct. Consequently, our effective Hamiltonians for these models tend to be non-commutative also outside the light cone, in spite of the fact that the automaton cannot send signals faster than light.
+
+This is one of the reasons why our effective Hamiltonians do not even approximately resemble the Standard Model. This does seem to be a mere technical problem; it is a very important one, and the question we now wish to pose is whether any systematic approach can be found to cure this apparent disease.
+
+This important question may well be one of the principal reasons why as of the present only very few physicists are inclined to take the Cellular Automaton Interpretation seriously. It is as if there is a fundamental obstacle standing in the way of reconstructing existing physical models of the world using cellular automata.
+
+Note, that the Baker-Campbell-Hausdorff expansion does seem to imply a weaker form of quantum locality: if we terminate the expansion at any finite or der $N,$ then the effective Hamiltonian density $\mathcal{H}\left(\vec{x}^{(1)}\right)$ commutes with $\mathcal{H}\left(\vec{x}^{(2)}\right)$ at equal times, if $\left|\vec{x}^{(1)}-\vec{x}^{(2)}\right| \geq N|\delta \vec{x}| .$ As we stated earlier, however, this is not good enough, because the BCH expansion is not expected to converge at all. We have to search for better constructions.
+
+
+
+
+\subsection{Second Quantization in Cellular Automata}\label{ch22.1}
+
+A promising approach for dealing with the danger of non-locality and unboundedness of the Hamiltonian may also be to stick more closely to quantum field theories. As it turns out, this requires that we first set up automata that describe freely moving particles; subsequently, one follows the procedure of second quantization, described
+in Sect. 15, and further elaborated in Sect. 15.2.3, and Sect. 20.3.
+
+In our theory, this means that we first have to describe deterministic motion of a single particle. We have already examples: the massless “neutrino” of Sect. 15.2, and the superstring, Sect. 17.3, but if we wish to reproduce anything resembling the Standard Model, we need the complete set, as described in Sect. 20.5: fermions, scalar bosons, gauge bosons, and perhaps gravitons. This will be difficult, because the fields we have today are mirroring the wave functions of standard quantum particles, which propagate non-deterministically.
+
+We now have to replace these by the wave functions of deterministic objects, in line with what has been discussed before, and rely on the expectation that, if we do this right, renormalization group effects may turn these into the more familiar quantized fields we see in the Standard Model. The advantage of this approach should be that now we can start with first-quantized states where the energy needs not be bounded from below; second quantization will take care of that: we get particles and antiparticles, see Sect. 20.3.
+
+A conceivable approach towards deterministic first-quantized particles is to start with discrete $PQ$ variables: discrete positions of a particle are labelled by three dimensional vectors $\vec{Q},$ and their momenta by discrete variables $\vec{P} .$ The conjugated variables are fractional momenta $\vec{\kappa}$ and fractional positions $\vec{\xi},$ and we start with
+$$
+e^{-i k_{i}}|\vec{Q}, \vec{P}\rangle=\left|\vec{Q}+e_{i}, \vec{P}\right\rangle, \quad e^{i \xi_{i}}|\vec{Q}, \vec{P}\rangle=\left|\vec{Q}, \vec{P}+e_{i}\right\rangle
+$$
+where $e_{i}$ are unit vectors spanning over one lattice unit in the $i$ th direction. Subsequently, we add phases $\varphi(\vec{\kappa}, \vec{\xi})$ as in Chap. $16 .$ We then choose deterministic evolution equations for our 'primordial' particle in terms of its $(\vec{P}, \vec{Q})$ coordinates. Our first attempt will be to describe a fermion. It should resemble the "neutrino" from Chap. $15.2,$ but we may have to replace the sheets by point particles. This means that the primordial particle cannot obey Dirac's equation. The important point is that we give the primordial particle a Hamiltonian $h_{0}^{\text {op }}$ having a spectrum ranging from $-\pi / \delta t$ to $\pi / \delta t$ in natural units, using the systematic procedure described in Chap. $14 . h_{0}^{\text {op }}$ does not yet describe interactions. It is a free Hamiltonian and therefore it allows for a detailed calculation of the particle's properties, which of course will be trivial, in a sense, until we add interactions.
+
+Upon second quantization then, if the negative energy levels are filled, and the positive energy levels are kept empty, we have the vacuum state, the state with lowest energy.
+
+This gives us a local Hamilton density $H_{0}^{\mathrm{op}},$ and the evolution operator over one unit $\delta t \text { in time will be generated by the operator (see Sect. } 15 ; \text { we set } \delta t=1 \text { again })$
+
+This operator obeys locality and positivity by construction: locality follows from the observation described in Chap. $14,$ which is that the expansion of arc sines converge rapidly when we limit ourselves to the middle of the energy spectrum, and positivity follows from second quantization.
+
+Now we carefully insert interactions. These will be described by an evolution operator $U_{B}^{\mathrm{op}}=e^{-i B^{\mathrm{op}}} .$ Of course, this operator must also be deterministic. Our strategy is now that $U_{B}^{\text {op }}$ will only generate rare, local interactions; for instance, we can postulate that two particles affect each other's motion only under fairly special circumstances of the surrounding vacuum. Note, that the vacuum is filled with particles, and these degrees of freedom may all play a role. We ensure that the interaction described by $U_{B}^{\mathrm{op}}$ is still local, although perhaps next-to-next-to nearest neighbours could interact. The total evolution operator is then
+$$
+e^{-i H^{\mathrm{op}}}=U^{\mathrm{op}}(\delta t)=\left(U_{A}^{\mathrm{op}}\right)^{\frac{1}{2}} U_{B}^{\mathrm{op}}\left(U_{A}^{\mathrm{op}}\right)^{\frac{1}{2}}=e^{-\frac{1}{2} i H_{0}^{\mathrm{op}}} e^{-i B^{\mathrm{op}}} e^{-\frac{1}{2} i H_{0}^{\mathrm{op}}}
+$$
+which we symmetrized with the powers $1 / 2$ for later convenience. This, we subject to the Baker-Campbell-Hausdorff expansion, Sect. $21.2 .$
+
+Now, it is important to make use of the fact that $B^{\circ p}$ is small. Expanding with respect to $B^{\mathrm{op}},$ we may start with just the first non-trivial term. Using the notation defined in Eq. ( 21.23) of Sect. $21.3,$ we can find the complete set of terms in the expansion of $H^{\mathrm{op}}$ to all powers of $H_{0}^{\mathrm{op}}$ but up to terms linear in $B^{\mathrm{op}}$ only. This goes as follows: let $A, B,$ and $C(t)$ be operators, and $t$ an arbitrary, small parameter. We use the fact that
+$$
+e^{F} R e^{-F}=\left\{e^{F}, R\right\}=R+[F, R]+\frac{1}{2 !}[F,[F, R]]+\frac{1}{3 !}[F,[F,[F, R]]]+\underset{(22.5)}{\cdots}
+$$
+and an expression for differentiating the exponent of an operator $C(t),$ to derive:
+$$
+\begin{array}{l}
+{e^{C(t)}=e^{\frac{1}{2} A} e^{t B} e^{\frac{1}{2} A}} \\
+{\frac{\mathrm{d}}{\mathrm{d} t} e^{C(t)}=\int_{0}^{1} \mathrm{d} x e^{x C(t)} \frac{\mathrm{d} C}{\mathrm{d} t} e^{(1-x) C(t)}=e^{\frac{1}{2} A} B e^{t B} e^{\frac{1}{2} A}=e^{\frac{1}{2} A} B e^{-\frac{1}{2} A} e^{C(t)}} \\
+{\rightarrow \int_{0}^{1} \mathrm{d} x\left\{e^{x C(t)}, \frac{\mathrm{d} C}{\mathrm{d} t}\right\}=\left\{\frac{e^{C(t)}-1}{C(t)}, \frac{\mathrm{d} C}{\mathrm{d} t}\right\}=\left\{e^{\frac{1}{2} A}, B\right\}}
+\end{array}
+$$
+where, in the last line, we multiplied with $e^{-C(t)}$ at the right. Expanding in $t,$ writing $C(t)=A+t C_{1}+\mathcal{O}\left(t^{2}\right),$ we find
+$$
+\frac{\mathrm{d} C(t)}{\mathrm{d} t}=\left\{\frac{C(t)}{e^{C(t)}-1} e^{\frac{1}{2} A}, B\right\} ; \quad C(t)=A+\left\{\frac{A}{2 \sinh \left(\frac{1}{2} A\right)}, t B\right\}+\mathcal{O}\left(t^{2} B^{2}\right)
+$$
+From this we deduce that the operator $H^{\mathrm{op}}$ in Eq. ( 22.4) expands as
+$$
+H^{\mathrm{op}}=H_{0}^{\mathrm{op}}+\left\{\frac{H_{0}^{\mathrm{op}}}{2 \sin \left(\frac{1}{2} H_{0}^{\mathrm{op}}\right)}, B^{\mathrm{op}}\right\}+\mathcal{O}\left(B^{\mathrm{op}}\right)^{2}
+$$
+
+Expanding the inverse sine, the accolades give
+$$
+\begin{aligned}
+\frac{x}{2 \sin (x / 2)}=& 1+\frac{1}{24} x^{2}+\frac{7}{5760} x^{4}+\cdots \quad \rightarrow \\
+\left\{\frac{H_{0}^{\mathrm{op}}}{2 \sin \left(\frac{1}{2} H_{0}^{\mathrm{op}}\right)}, B^{\mathrm{op}}\right\}=& B^{\mathrm{op}}+\frac{1}{24}\left[H_{0}^{\mathrm{op}},\left[H_{0}^{\mathrm{op}}, B^{\mathrm{op}}\right]\right] \\
+&+\frac{7}{560}\left[H_{0}^{\mathrm{op}},\left[H_{0}^{\mathrm{op}},\left[H_{0}^{\mathrm{op}},\left[H_{0}^{\mathrm{op}}, B^{\mathrm{op}}\right]\right]\right]\right]+\cdots \\
+&+\mathcal{O}\left(B^{\mathrm{op}}\right)^{2}
+\end{aligned}
+$$
+We can now make several remarks:
+This is again a BCH expansion, and again, one can object that it does not converge, neither in powers of $H_{0}^{\mathrm{op}}$ nor in powers of $B^{\mathrm{op}}$ However, now $B^{\text {op }}$ may be assumed to be small, so we do not have to go to high powers of $B^{\mathrm{op}},$ when we wish to compute its effect on the Hamiltonian. But the expansion in $H_{0}^{\text {op }}$ at first sight looks worrying. However:
+We have the entire expression $(22.8),(22.9)$ to our disposal. The term linear in $B^{\mathrm{op}}$ can be rewritten as follows:
+
+Let $B_{k \ell}$ be the matrix elements of the operator $B^{\mathrm{op}}$ in the basis of eigenstates $\left|E_{0}\right\rangle$ of $H_{0}^{\mathrm{op}} .$ Then, the expression in accolades can be seen to generate the matrix elements of $H^{\mathrm{op}}:$
+$$
+H_{k \ell}=\frac{\Delta E_{k \ell}^{o}}{2 \sin \left(\frac{1}{2} \Delta E_{k \ell}^{o}\right)} B_{k \ell}
+$$
+where $\Delta E_{k \ell}^{o}$ is the energy difference between the two basis elements considered.
+
+since $B^{\text {op }}$ is considered to be small, the energies $E^{0}$ of the states considered are expected to stay very close to the total energies of these states. It is perhaps not unreasonable now to assume that we may limit ourselves to 'soft templates', where only low values for the total energies are involved. This may mean that we might never have to worry about energies as large as $2 \pi / \delta t,$ where we see the first singularity in the expansion ( 22.9)
+
+Thus, in this approach, we see good hopes that only the first few terms of the BCH expansion suffice to get a good picture of our interacting Hamiltonian. These terms all obey locality, and the energy will still be bounded from below.
+
+There will still be a long way to go before we can make contact with the Standard Model describing the world as we know it. What our procedure may have given us is a decent, local as well as bounded Hamiltonian at the Planck scale. We know from quantum field theories that to relate such a Hamiltonian to physics that can be experimentally investigated, we have to make a renormalization group transformation covering some 20 orders of magnitude. It is expected that this transformation may wipe out most of the effective non-renormalizable interactions in our primordial Hamiltonian, but all these things still have to be proven.
+
+An interesting twist to the second-quantization approach advocated here is that we have a small parameter for setting up a perturbation expansion. The sequence of higher order corrections starts out to converge very well, but then, at very high orders, divergence will set in. What this means is that, in practice, our quantum Hamiltonian is defined with a built-in margin of error that is extremely tiny but nonvanishing, just as what we have in quantum field theory. This might lead to a formal non-locality that is far too small to be noticed in our quantum calculations, while it could suffice to take away some of the apparent paradoxes that are still bothering many of us.
+
+Thus, in this section, we produced a credible scenario of how a theory not unlike the Standard Model may emerge from further studies of the approach proposed here. It was an argument, not yet a proof, in favour of the existence of cellular automaton models with this capacity.
+
+
+
+\subsection{More About Edge States}\label{ch22.2}
+
+The notion of edge states is used in solid state physics and presumably elsewhere in mathematical physics as well. In our book, states that deserve to be called "edge states" arise when we attempt to reproduce canonical commutation ruch as
+$$
+[q, p]=i \mathbb{I}
+$$
+in a finite dimensional vector space. To prove that this is fundamentally impossible is easy: just note that
+$$
+\operatorname{Tr}(p q)=\operatorname{Tr}(q p), \quad \operatorname{Tr}(\mathbb{I})=N
+$$
+( 22.12)
+
+where $N$ is the dimensionality of the vector space. So, we see that in a finitedimensional vector space, we need at least one state that violates Eq. $(22.11) .$ This is then our edge state. When we limit ourselves to states orthogonal to that, we recover Eq. $(22.11),$ but one cannot avoid that necessarily the operators $q$ and $p$ will connect the other states to the edge state eventually.
+
+In the continuum, this is also true; the operators $q$ and $p$ map some states with finite $L^{2}$ norm onto states with infinite norm.
+
+Often, our edge states are completely delocalized in space-time, or in the space of field variables. To require that we limit ourselves to quantum states that are orthogonal to edge states means that we are making certain restrictions on our boundary conditions. What happens at the boundary of the universe? What happens at the boundary of the Hamiltonian (that is, at infinite energies)? This seems to be hardly of relevance when questions are asked about the local laws of our physical world. In Chap. $16,$ we identified one edge state to a single point on a two-dimensional torus. There, we were motivated by the desire to obtain more convergent expressions. Edge states generate effective non-locality, which we would like to see reduced to a minimum.
+
+We also had to confront edge states in our treatment of the constraints for the longitudinal modes of string theory (Sect. $17.3 .5) .$ Intuitively, these edge state effects seem to be more dangerous there.
+
+Note furthermore, that in our first attempts to identify the vacuum state, Sect. 14 it is found that the vacuum state may turn out to be an edge state. This is definitely a situation we need to avoid, for which we now propose to use the procedure of second quantization. Edge states are not always as innocent as they look.
+
+
+\subsection{Invisible Hidden Variables}\label{ch22.3}
+
+In the simplest examples of models that we discussed, for instance those in Chaps. 13 and $15,$ the relation between the deterministic states and the quantum basis states is mostly straightforward and unambiguous. However, when we reach more advanced constructions, we find that, given the quantum Hamiltonian and the description of the Hilbert space in which it acts, there is a multitude of ways in which one can define the ontological states. This happens when the quantum model possesses symmetries that are broken in the ontological description. Look at our treatment of string theory in Sect. 17.3: the quantum theory has the entire continuous, $D$ dimensional Poincaré group as a symmetry, whereas, in the deterministic description, this is broken down to the discrete lattice translations and rotations in the $D-2$ dimensional transverse space. since most of our deterministic models necessarily consist of discretized variables, they will only, at best, have discrete symmetries, which means the all continuous symmetries $\mathcal{C}$ of the quantum world that we attempt to account for, must be broken down to discrete subgroups $\mathcal{D} \subset \mathcal{C} .$ This means that there is a group $\mathcal{C} / \mathcal{D}$ of non-trivial transformations of the set of ontological variables onto another set of variables that, amongst themselves, also completely commute, so that these could also serve as 'the' ontological variables. We can never know which of these sets are the 'true' ontological variables, and this means that the 'true' ontological variables are hidden from us. Thus, which operators exactly are to be called true beables, which are changeables and which are superimposables, will be hidden from our view. This is why we are happy to adopt the phrase "hidden variables' to describe our ontological variables. Whether or not we can call them 'invisible' depends on the question whether any quantum states can be invisible. That phrase might be misleading.
+
+For our analysis of Bell's theorem, this is an important issue. If the true ontological variables could have been identified, it would have been possible to deduce, in advance, how Alice and Bob will choose their settings. The fact that this is now impossible removes the 'conspiracy' aspect of the CAI.
+
+
+
+
+\subsection{How Essential Is the Role of Gravity?}\label{ch22.4}
+
+Quantum gravity is not sufficiently well understood to allow us to include the gravitational force in our quantum theories. This may well be the reason why some aspects of this work are leaving holes and question marks. Gravity is active at the smallest conceivable scale of physics, which is exactly the scale where we think our theories are most relevant. So no-one should be surprised that we do not completely succeed in our technical procedures. As stated, what we would wish to be able to do is to find a class of deterministic models that are locally discrete and classical, but that can be cast in a form that can be described by a quantum field theory.
+
+As emphasised before (Sect. $19.1),$ our quantum field theories are described by
+a Hamiltonian that is both extensive and bounded from below. It means that the Hamiltonian can be written as
+$$
+H=\int \mathrm{d}^{3} \vec{x} T^{00}(\vec{x})
+$$
+The operator $T^{00}$ is the Hamilton density, and locality and causality in quantum field theory require that, at equal times, $t=t_{0}$
+$$
+\left[T^{00}\left(\vec{x}_{1}, t_{0}\right), T^{00}\left(\vec{x}_{2}, t_{0}\right)\right]=0 \quad \text { if } \quad \vec{x}_{1} \neq \vec{x}_{2}
+$$
+Having difficulties recuperating Eq. ( 22.14) from our cellular automaton, it may be worth while to observe that the operator $T^{00}$ pays the important role of generator of space-dependent time translations: if we change the metric tensor $g_{00}$ in the time direction by an amount $\delta g_{00}(\vec{x}, t),$ then the change in the total action of matter is
+$$
+\delta S=\frac{1}{2} \int \mathrm{d}^{3} \vec{x} \mathrm{d} t \sqrt{-g} T^{00} \delta g_{00}(\vec{x}, t)
+$$
+(which can actually be seen as a definition of the stress-energy-momentum tensor $\left.T^{\mu v}\right) .$ Indeed, if we take $\delta g_{00}$ to be independent of the space coordinate $\vec{x}$, then the amount of time that went by is modified by $\frac{1}{2} \int \delta g_{00} \mathrm{d} t,$ which therefore yields a reaction proportional to the total Hamiltonian $H$
+
+The operator $\int \mathrm{d}^{3} \vec{x} \sqrt{-g} T^{00}(\vec{x}) f(\vec{x})$ is the generator of a space dependent time translation: $\delta t=f(\vec{x}) .$ One finds that $T^{\mu \nu}(\vec{x}, t)$ is the generator of general coordinate transformations. This is the domain of gravity. This gives us reasons to believe that quantum theories in which the Hamiltonian is extrinsic, that is, the integral of local terms $T^{00}(\vec{x}, t),$ are intimately connected to quantum gravity. We still have problems formulating completely self-consistent, unambiguous theories of quantum gravity, while this seems to be a necessary ingredient for a theory of quantum mechanics with locality.
+
+Apart from the reasons just mentioned, we suspect an essential role for gravity also in connection with our problem concerning the positivity of the Hamiltonian. In gravity, the energy density of the gravitational field is well-known to be negative. Indeed, Einstein's equation,
+$$
+T_{\mu v}-\frac{1}{8 \pi G} G_{\mu v}=0
+$$
+can be interpreted as saying that the negative energy momentum density of gravity itself, the second term in Eq. $(22.16),$ when added to the energy momentum tensor of matter, $T_{\mu \nu},$ leads to a total energy-momentum tensor that vanishes. The reason why the total energy-momentum tensor vanishes is that it generates local coordinate transformations, under which all amplitudes should be invariant.
+
+In Sect. $7,$ and in Sect. $9.3,$ it was indicated that gravity might be associated with local information loss. This would then mean that information loss should become an essential ingredient in theories that explain the emergence of quantum mechanics with locality from a cellular automaton model with locality built in.
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
